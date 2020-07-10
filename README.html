@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Testes &#8212; The Practical Testing Book</title>
+    <title>practical_testing_book &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -183,30 +183,9 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#para-contribuir" class="nav-link">Para contribuir</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#como-este-livro-esta-organizado" class="nav-link">Como este livro esta organizado?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#como-gerar-arquivos-html" class="nav-link">Como gerar arquivos html?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#como-adicionar-arquivos-ipynb" class="nav-link">Como adicionar arquivos .ipynb?</a>
-        </li>
-    
-            </ul>
-        </li>
     
     </ul>
 </nav>
@@ -219,37 +198,20 @@
         
               <div>
                 
-  <div class="section" id="testes">
-<h1>Testes<a class="headerlink" href="#testes" title="Permalink to this headline">¶</a></h1>
-<p>Aqui temos o prototipo do livro que deve conter o conteudo da disciplina de testes ministrada pelo professor Marcelo d’Amorim com demos, atividades hands-on e tutorias</p>
-<p>Este livro e construido com o suporte do <a class="reference external" href="https://jupyterbook.org">Jupyter Books</a></p>
-<div class="section" id="para-contribuir">
-<h2>Para contribuir<a class="headerlink" href="#para-contribuir" title="Permalink to this headline">¶</a></h2>
-<p>Faca o download do repositorio e instale as dependencias</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
-<div class="section" id="como-este-livro-esta-organizado">
-<h3>Como este livro esta organizado?<a class="headerlink" href="#como-este-livro-esta-organizado" title="Permalink to this headline">¶</a></h3>
-<p>Alguns arquivos e diretorios sao responsaveis pela organizao do livro, sao eles:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> contem informacoes sobre titulo, autores e logo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> e a tabela de conteudo dos livros (table of contents), nela esta a estrurua de capitulos e secoes</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/</span></code> contem os diretorios numeros respectivamente com cada capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo</span></code> contem um arquivo <code class="docutils literal notranslate"><span class="pre">conteudo.md</span></code> que tem as informacoes iniciais do capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo/secao</span></code> contem arquivos com conteudo de cada secao</p></li>
-</ul>
-</div>
-<div class="section" id="como-gerar-arquivos-html">
-<h3>Como gerar arquivos html?<a class="headerlink" href="#como-gerar-arquivos-html" title="Permalink to this headline">¶</a></h3>
-<p>Simplesmente rode o script <code class="docutils literal notranslate"><span class="pre">build_book</span></code> e abra o arquivo html no path indicado</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_book</span>
+  <div class="section" id="practical-testing-book">
+<h1>practical_testing_book<a class="headerlink" href="#practical-testing-book" title="Permalink to this headline">¶</a></h1>
+<p>To build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>abrir o arquivo <code class="docutils literal notranslate"><span class="pre">index.html</span></code> para ter acesso a pagina atualizada</p>
+<p>Publish gh-pages:</p>
+<p>First install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+</pre></div>
 </div>
-<div class="section" id="como-adicionar-arquivos-ipynb">
-<h3>Como adicionar arquivos .ipynb?<a class="headerlink" href="#como-adicionar-arquivos-ipynb" title="Permalink to this headline">¶</a></h3>
-<p>acesse o <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>, depois das modificacoes inseridas, exporte o arquivo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> e adicione dentro da secao desejada</p>
-</div>
+<p>Publishing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
 </div>
 </div>
 
