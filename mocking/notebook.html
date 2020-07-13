@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Unit Testing &#8212; The Practical Testing Book</title>
+    <title>Mocking with Python Mock &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integration Testing" href="integrationtesting.html" />
-    <link rel="prev" title="The Different Dimensions of Testing" href="../fundamentals/kinds.html" />
+    <link rel="next" title="Credits" href="../misc/credits.html" />
+    <link rel="prev" title="Basics" href="basics.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -84,17 +84,17 @@
 <li class="navbar-special">
 <p class="margin-caption">Test Granularity</p>
 </li>
-  <li class="active">
-    <a href="">Unit Testing</a>
+  <li class="">
+    <a href="../testgranularity/unittesting.html">Unit Testing</a>
   </li>
   <li class="">
-    <a href="integrationtesting.html">Integration Testing</a>
+    <a href="../testgranularity/integrationtesting.html">Integration Testing</a>
   </li>
   <li class="">
-    <a href="systemtesting.html">System Testing</a>
+    <a href="../testgranularity/systemtesting.html">System Testing</a>
   </li>
   <li class="">
-    <a href="acceptancetesting.html">Acceptance Testing</a>
+    <a href="../testgranularity/acceptancetesting.html">Acceptance Testing</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Adequacy</p>
@@ -154,10 +154,10 @@
 <p class="margin-caption">Mocking</p>
 </li>
   <li class="">
-    <a href="../mocking/basics.html">Basics</a>
+    <a href="basics.html">Basics</a>
   </li>
-  <li class="">
-    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
+  <li class="active">
+    <a href="">Mocking with Python Mock</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Misc</p>
@@ -212,7 +212,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testgranularity/unittesting.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/mocking/notebook.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -236,7 +236,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testgranularity/unittesting.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/mocking/notebook.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -244,7 +244,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testgranularity/unittesting.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/mocking/notebook.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -255,9 +255,22 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-mock-library-gives-us-more-control-on-the-test-case" class="nav-link">In this notebook, we have a test example that, by the use of the Mock library, gives us more control on the test case</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#feel-tips" class="nav-link">Feel tips:</a>
+        </li>
+    
+            </ul>
+        </li>
     
     </ul>
 </nav>
@@ -270,91 +283,103 @@
         
               <div>
                 
-  <div class="section" id="unit-testing">
-<h1>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mocking-with-python-mock">
+<h1>Mocking with Python <code class="docutils literal notranslate"><span class="pre">Mock</span></code><a class="headerlink" href="#mocking-with-python-mock" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-mock-library-gives-us-more-control-on-the-test-case">
+<h2>In this notebook, we have a test example that, by the use of the <code class="docutils literal notranslate"><span class="pre">Mock</span></code> library, gives us more control on the test case<a class="headerlink" href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-mock-library-gives-us-more-control-on-the-test-case" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="feel-tips">
+<h3>Feel tips:<a class="headerlink" href="#feel-tips" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>To run this notebook interactively, select the rocket in the above menu and select <code class="docutils literal notranslate"><span class="pre">binder</span></code></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1Lfv5tUGsn8&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/1Lfv5tUGsn8"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vamos definir a classe circle em python</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The radius must be a non-negative real number.&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The radius must not be negative.&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agora vamos escrever testes de unidade para esta classe</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
-    <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1">#Test area when radius &gt;= 0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pi</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mf">2.1</span><span class="p">),</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we implement a function to check if the current day is a weekday</span>
 
-    <span class="k">def</span> <span class="nf">test_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1">#Make sure value errors are raised when necessary</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">test_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1">#Make sure type errors are raised when necessary</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="n">j</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">is_weekday</span><span class="p">():</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="c1"># Python&#39;s datetime library treats Monday as 0 and Sunday as 6</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test if today is a weekday</span>
+
+<span class="c1"># In this cell, you should edit it depending on the day you&#39;re seeing this exercise in order to make the test pass. That&#39;s not an expectaded behavior in software testing! In next cells, we use mocks to prevent it!</span>
+
+<span class="c1"># assert is_weekday() # from monday to friday</span>
+<span class="c1"># assert not is_weekday() # for saturday and sunday</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you think for a while, we have a test case which the assertion result may vary depending on which day of the week the test is actually run! If you run it from Monday to Friday, it shall pass, otherwise, it won’t.</p>
+<p>To have more control on what the object generate, we can use Mock to modify the <code class="docutils literal notranslate"><span class="pre">return</span></code> from the function. Let’s do it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">Mock</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save a couple of test days to use as mocking! Go ahead and change it as you desire!</span>
+<span class="n">tuesday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">saturday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mock datetime to control today&#39;s date, as we want to return or custom days</span>
+<span class="n">datetime</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_weekday</span><span class="p">():</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="c1"># Python&#39;s datetime library treats Monday as 0 and Sunday as 6</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mock .today() to return Tuesday</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">tuesday</span>
+
+<span class="c1"># Test Tuesday is a weekday</span>
+<span class="k">assert</span> <span class="n">is_weekday</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mock .today() to return Saturday</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">saturday</span>
+<span class="c1"># Test Saturday is not a weekday</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">is_weekday</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -369,8 +394,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../fundamentals/kinds.html" title="previous page">The Different Dimensions of Testing</a>
-    <a class='right-next' id="next-link" href="integrationtesting.html" title="next page">Integration Testing</a>
+    <a class='left-prev' id="prev-link" href="basics.html" title="previous page">Basics</a>
+    <a class='right-next' id="next-link" href="../misc/credits.html" title="next page">Credits</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

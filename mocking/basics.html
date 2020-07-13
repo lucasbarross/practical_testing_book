@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Flaky Tests &#8212; The Practical Testing Book</title>
+    <title>Basics &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Test Selection and Prioritization" href="selectionprio.html" />
-    <link rel="prev" title="Continuous Integration" href="continuousintegration.html" />
+    <link rel="next" title="Mocking with Python Mock" href="notebook.html" />
+    <link rel="prev" title="Hands On: Delta Debugging" href="../debugging/deltadebugging.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -127,16 +127,16 @@
 <p class="margin-caption">Regression Testing</p>
 </li>
   <li class="">
-    <a href="buildsystems.html">Build Systems</a>
+    <a href="../testregression/buildsystems.html">Build Systems</a>
   </li>
   <li class="">
-    <a href="continuousintegration.html">Continuous Integration</a>
-  </li>
-  <li class="active">
-    <a href="">Flaky Tests</a>
+    <a href="../testregression/continuousintegration.html">Continuous Integration</a>
   </li>
   <li class="">
-    <a href="selectionprio.html">Test Selection and Prioritization</a>
+    <a href="../testregression/flakytests.html">Flaky Tests</a>
+  </li>
+  <li class="">
+    <a href="../testregression/selectionprio.html">Test Selection and Prioritization</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Debugging</p>
@@ -153,11 +153,11 @@
 <li class="navbar-special">
 <p class="margin-caption">Mocking</p>
 </li>
-  <li class="">
-    <a href="../mocking/basics.html">Basics</a>
+  <li class="active">
+    <a href="">Basics</a>
   </li>
   <li class="">
-    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
+    <a href="notebook.html">Mocking with Python Mock</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Misc</p>
@@ -212,7 +212,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testregression/flakytests.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/mocking/basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -233,9 +233,20 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#why-to-use-it" class="nav-link">Why to use it?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mock-in-python" class="nav-link">Mock in Python</a>
+        </li>
     
     </ul>
 </nav>
@@ -248,8 +259,20 @@
         
               <div>
                 
-  <div class="section" id="flaky-tests">
-<h1>Flaky Tests<a class="headerlink" href="#flaky-tests" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<p>In software development, mocks are objects that simulate the behaviour of real objects.</p>
+<div class="section" id="why-to-use-it">
+<h2>Why to use it?<a class="headerlink" href="#why-to-use-it" title="Permalink to this headline">¶</a></h2>
+<p>In Unit Tests, it can simulate the behavior of a more complex object, making the test faster and, sometimes, even doable</p>
+</div>
+<div class="section" id="mock-in-python">
+<h2>Mock in Python<a class="headerlink" href="#mock-in-python" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code> is a library for testing in Python.</p>
+<blockquote>
+<div><p>Note: From Python 3.3, it is included in standard library. If you are using a prior version you should install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mock</span></code></p>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -261,8 +284,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="continuousintegration.html" title="previous page">Continuous Integration</a>
-    <a class='right-next' id="next-link" href="selectionprio.html" title="next page">Test Selection and Prioritization</a>
+    <a class='left-prev' id="prev-link" href="../debugging/deltadebugging.html" title="previous page">Hands On: Delta Debugging</a>
+    <a class='right-next' id="next-link" href="notebook.html" title="next page">Mocking with Python <code class="docutils literal notranslate"><span class="pre">Mock</span></code></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
