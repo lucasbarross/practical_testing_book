@@ -5,33 +5,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Unit Testing &#8212; The Practical Testing Book</title>
+    <title>Test converage in python &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integration Testing" href="integrationtesting.html" />
-    <link rel="prev" title="The Different Dimensions of Testing" href="../fundamentals/kinds.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Credits" href="misc/credits.html" />
+    <link rel="prev" title="Mocking with Python Mock" href="mocking/notebook.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -48,9 +48,9 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
+<a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="../_static/logo.png" class="logo" alt="logo">
+  <img src="_static/logo.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">The Practical Testing Book</h1>
@@ -58,7 +58,7 @@
 </a>
 </div>
 
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -67,115 +67,115 @@
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="../intro.html">Introduction</a>
+    <a href="intro.html">Introduction</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Fundamentals</p>
 </li>
   <li class="">
-    <a href="../fundamentals/basics.html">Motivation and Basic Definitions</a>
+    <a href="fundamentals/basics.html">Motivation and Basic Definitions</a>
   </li>
   <li class="">
-    <a href="../fundamentals/limitations.html">Limitations</a>
+    <a href="fundamentals/limitations.html">Limitations</a>
   </li>
   <li class="">
-    <a href="../fundamentals/kinds.html">The Different Dimensions of Testing</a>
+    <a href="fundamentals/kinds.html">The Different Dimensions of Testing</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Granularity</p>
 </li>
-  <li class="active">
-    <a href="">Unit Testing</a>
+  <li class="">
+    <a href="testgranularity/unittesting.html">Unit Testing</a>
   </li>
   <li class="">
-    <a href="integrationtesting.html">Integration Testing</a>
+    <a href="testgranularity/integrationtesting.html">Integration Testing</a>
   </li>
   <li class="">
-    <a href="systemtesting.html">System Testing</a>
+    <a href="testgranularity/systemtesting.html">System Testing</a>
   </li>
   <li class="">
-    <a href="acceptancetesting.html">Acceptance Testing</a>
+    <a href="testgranularity/acceptancetesting.html">Acceptance Testing</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Adequacy</p>
 </li>
   <li class="">
-    <a href="../testadequacy/idea.html">How Good Are your Tests?</a>
+    <a href="testadequacy/idea.html">How Good Are your Tests?</a>
   </li>
   <li class="">
-    <a href="../testadequacy/coverage.html">Test Coverage</a>
+    <a href="testadequacy/coverage.html">Test Coverage</a>
   </li>
   <li class="">
-    <a href="../testadequacy/mutation.html">Mutation Testing</a>
+    <a href="testadequacy/mutation.html">Mutation Testing</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Generation</p>
 </li>
   <li class="">
-    <a href="../testgeneration/modelbased.html">Model-Based Testing</a>
+    <a href="testgeneration/modelbased.html">Model-Based Testing</a>
   </li>
   <li class="">
-    <a href="../testgeneration/combinatorial.html">Combinatorial Testing</a>
+    <a href="testgeneration/combinatorial.html">Combinatorial Testing</a>
   </li>
   <li class="">
-    <a href="../testgeneration/random.html">Randomized Testing</a>
+    <a href="testgeneration/random.html">Randomized Testing</a>
   </li>
   <li class="">
-    <a href="../testgeneration/fuzzing.html">Fuzzing</a>
+    <a href="testgeneration/fuzzing.html">Fuzzing</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Regression Testing</p>
 </li>
   <li class="">
-    <a href="../testregression/buildsystems.html">Build Systems</a>
+    <a href="testregression/buildsystems.html">Build Systems</a>
   </li>
   <li class="">
-    <a href="../testregression/continuousintegration.html">Continuous Integration</a>
+    <a href="testregression/continuousintegration.html">Continuous Integration</a>
   </li>
   <li class="">
-    <a href="../testregression/flakytests.html">Flaky Tests</a>
+    <a href="testregression/flakytests.html">Flaky Tests</a>
   </li>
   <li class="">
-    <a href="../testregression/selectionprio.html">Test Selection and Prioritization</a>
+    <a href="testregression/selectionprio.html">Test Selection and Prioritization</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Debugging</p>
 </li>
   <li class="">
-    <a href="../debugging/scientific.html">Scientific Debugging</a>
+    <a href="debugging/scientific.html">Scientific Debugging</a>
   </li>
   <li class="">
-    <a href="../debugging/gitbisect.html">Hands On: Git Bisect</a>
+    <a href="debugging/gitbisect.html">Hands On: Git Bisect</a>
   </li>
   <li class="">
-    <a href="../debugging/deltadebugging.html">Hands On: Delta Debugging</a>
+    <a href="debugging/deltadebugging.html">Hands On: Delta Debugging</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Mocking</p>
 </li>
   <li class="">
-    <a href="../mocking/basics.html">Basics</a>
+    <a href="mocking/basics.html">Basics</a>
   </li>
   <li class="">
-    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
+    <a href="mocking/notebook.html">Mocking with Python Mock</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test coverage</p>
 </li>
-  <li class="">
-    <a href="../coverage.html">Test converage in python</a>
+  <li class="active">
+    <a href="">Test converage in python</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Misc</p>
 </li>
   <li class="">
-    <a href="../misc/credits.html">Credits</a>
+    <a href="misc/credits.html">Credits</a>
   </li>
   <li class="">
-    <a href="../misc/howtohelp.html">How To Help</a>
+    <a href="misc/howtohelp.html">How To Help</a>
   </li>
   <li class="">
-    <a href="../misc/tobedone.html">TODOs</a>
+    <a href="misc/tobedone.html">TODOs</a>
   </li>
 </ul>
 </nav>
@@ -218,7 +218,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testgranularity/unittesting.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/coverage.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -242,17 +242,17 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testgranularity/unittesting.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/coverage.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
+                    src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testgranularity/unittesting.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/coverage.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
+                    src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         
@@ -261,9 +261,30 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library" class="nav-link">In this notebook, we have a test example that, by the use of the coverage library</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#add-more-tests-in-your-file" class="nav-link">Add more tests in your file:</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#run-again-the-coverage-commands" class="nav-link">Run again the coverage commands</a>
+        </li>
     
     </ul>
 </nav>
@@ -276,75 +297,65 @@
         
               <div>
                 
-  <div class="section" id="unit-testing">
-<h1>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="test-converage-in-python">
+<h1>Test converage in python<a class="headerlink" href="#test-converage-in-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library">
+<h2>In this notebook, we have a test example that, by the use of the <code class="docutils literal notranslate"><span class="pre">coverage</span></code> library<a class="headerlink" href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library" title="Permalink to this headline">¶</a></h2>
+<p>Install the package coverage in your machine:</p>
+<p>pip install coverage</p>
+<p>Create a file to coverage with name area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1Lfv5tUGsn8&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/1Lfv5tUGsn8"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vamos definir a classe circle em python</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#area.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The radius must be a non-negative real number.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The radius must not be negative.&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Create a test file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agora vamos escrever testes de unidade para esta classe</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#test.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="c1">#from area import *</span>
+
+<span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
+    <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Test area when radius &gt;= 0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="coverage-commands">
+<h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
+<p>Run the follow command using the command line of your OS:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">run</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></p>
+<p>View the coverage report:</p>
+<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">report</span> <span class="pre">-m</span></code></p>
+<p>Generate a html file with the all coverage:
+<code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></p>
+<p>Open the file in path: /htmlcov/index.html</p>
+<div class="section" id="add-more-tests-in-your-file">
+<h3>Add more tests in your file:<a class="headerlink" href="#add-more-tests-in-your-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#test.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="c1">#from area import *</span>
+
+<span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
     <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1">#Test area when radius &gt;= 0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pi</span><span class="p">)</span>
@@ -359,10 +370,15 @@
         <span class="c1">#Make sure type errors are raised when necessary</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="n">j</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">)</span>
+        <span class="c1">#self.assertRaises(TypeError, circle_area, &quot;text&quot;)</span>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="run-again-the-coverage-commands">
+<h2>Run again the coverage commands<a class="headerlink" href="#run-again-the-coverage-commands" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -375,8 +391,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../fundamentals/kinds.html" title="previous page">The Different Dimensions of Testing</a>
-    <a class='right-next' id="next-link" href="integrationtesting.html" title="next page">Integration Testing</a>
+    <a class='left-prev' id="prev-link" href="mocking/notebook.html" title="previous page">Mocking with Python <code class="docutils literal notranslate"><span class="pre">Mock</span></code></a>
+    <a class='right-next' id="next-link" href="misc/credits.html" title="next page">Credits</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -395,7 +411,7 @@
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    <script src="_static/js/index.js"></script>
     
   </body>
 </html>
