@@ -160,7 +160,7 @@
     <a href="mocking/notebook.html">Mocking with Python Mock</a>
   </li>
 <li class="navbar-special">
-<p class="margin-caption">Test coverage</p>
+<p class="margin-caption">Test Coverage</p>
 </li>
   <li class="active">
     <a href="">Test converage in python</a>
@@ -269,11 +269,11 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library" class="nav-link">In this notebook, we have a test example that, by the use of the coverage library</a>
+            <a href="#in-this-notebok-we-have-an-example-of-using-test-coverage" class="nav-link">In this notebok, we have an example of using test coverage.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
+            <a href="#coverage-commands-1" class="nav-link">Coverage commands [1]</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
             <a href="#add-more-tests-in-your-file" class="nav-link">Add more tests in your file:</a>
@@ -283,7 +283,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#run-again-the-coverage-commands" class="nav-link">Run again the coverage commands</a>
+            <a href="#run-again-the-coverage-commands-1" class="nav-link">Run again the coverage commands [1]</a>
         </li>
     
     </ul>
@@ -299,10 +299,35 @@
                 
   <div class="section" id="test-converage-in-python">
 <h1>Test converage in python<a class="headerlink" href="#test-converage-in-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library">
-<h2>In this notebook, we have a test example that, by the use of the <code class="docutils literal notranslate"><span class="pre">coverage</span></code> library<a class="headerlink" href="#in-this-notebook-we-have-a-test-example-that-by-the-use-of-the-coverage-library" title="Permalink to this headline">¶</a></h2>
-<p>Install the package coverage in your machine:</p>
-<p>pip install coverage</p>
+<div class="section" id="in-this-notebok-we-have-an-example-of-using-test-coverage">
+<h2>In this notebok, we have an example of using test coverage.<a class="headerlink" href="#in-this-notebok-we-have-an-example-of-using-test-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The term <strong><code class="docutils literal notranslate"><span class="pre">coverage</span></code></strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;dwG656XIa40&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/dwG656XIa40"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>First, install the package coverage in your machine, using the command line:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">coverage</span></code></strong></p>
 <p>Create a file to coverage with name area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -319,7 +344,7 @@
 </div>
 </div>
 </div>
-<p>Create a test file:</p>
+<p>Create a new test file and uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#test.py</span>
@@ -336,16 +361,17 @@
 </div>
 </div>
 </div>
-<div class="section" id="coverage-commands">
-<h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="coverage-commands-1">
+<h2>Coverage commands [1]<a class="headerlink" href="#coverage-commands-1" title="Permalink to this headline">¶</a></h2>
 <p>Run the follow command using the command line of your OS:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">run</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></p>
-<p>View the coverage report:</p>
-<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">report</span> <span class="pre">-m</span></code></p>
-<p>Generate a html file with the all coverage:
-<code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></p>
-<p>Open the file in path: /htmlcov/index.html</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">run</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></strong></p>
+<p>To see test coverage, run the coverage report:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">report</span> <span class="pre">-m</span></code></strong></p>
+<p>It is possible to create files that illustrate which parts were covered, illustrated through html pages. Run the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></p>
+<p>Open the generated file in <strong>path</strong>: <code class="docutils literal notranslate"><span class="pre">/htmlcov/index.html</span></code></p>
+<p>Now, let’s run more tests to check coverage.</p>
 <div class="section" id="add-more-tests-in-your-file">
 <h3>Add more tests in your file:<a class="headerlink" href="#add-more-tests-in-your-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -377,8 +403,30 @@
 </div>
 </div>
 </div>
-<div class="section" id="run-again-the-coverage-commands">
-<h2>Run again the coverage commands<a class="headerlink" href="#run-again-the-coverage-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-again-the-coverage-commands-1">
+<h2>Run again the coverage commands [1]<a class="headerlink" href="#run-again-the-coverage-commands-1" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s solve some questions about the content:</p>
+<style>.embed-container2{
+        position: relative;
+        padding-bottom: 97.23%;
+        height=0;
+        overflow: hidden;
+        max-width: 100%;
+    }.embed-container2 iframe,
+    .embed-container2 object,
+    .embed-container2
+    embed { position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+</style>
+<div class="embed-container2">
+    <iframe
+                         src="https://docs.google.com/forms/d/e/1FAIpQLSfHPtBpdYVb_dr6o5O203Rl85YNK4mDOZYnnxSnX17QtQ9pRQ/viewform"
+            frameborder="0" marginheight="0" marginwidth="0">
+    </iframe>
+</div>
 </div>
 </div>
 
