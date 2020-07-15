@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Test converage in python &#8212; The Practical Testing Book</title>
+    <title>Hands On: Using coverage.py &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -160,10 +160,10 @@
     <a href="mocking/notebook.html">Mocking with Python Mock</a>
   </li>
 <li class="navbar-special">
-<p class="margin-caption">Test Coverage</p>
+<p class="margin-caption">Code Coverage</p>
 </li>
   <li class="active">
-    <a href="">Test converage in python</a>
+    <a href="">Hands On: Using coverage.py</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Misc</p>
@@ -269,21 +269,25 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#in-this-notebok-we-have-an-example-of-using-test-coverage" class="nav-link">In this notebok, we have an example of using test coverage.</a>
+            <a href="#in-this-notebook-we-have-an-example-of-using-test-coverage" class="nav-link">In this notebook, we have an example of using test coverage.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#coverage-commands-1" class="nav-link">Coverage commands [1]</a><ul class="nav section-nav flex-column">
+            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
-            <a href="#add-more-tests-in-your-file" class="nav-link">Add more tests in your file:</a>
+            <a href="#add-more-tests-in-your-tests-file" class="nav-link">Add more tests in your tests file:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#run-again-the-coverage-commands-and-view-the-results" class="nav-link">Run again the coverage commands and view the results.</a>
         </li>
     
             </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#run-again-the-coverage-commands-1" class="nav-link">Run again the coverage commands [1]</a>
+            <a href="#now-let-s-solve-some-questions-about-code-coverage" class="nav-link">Now, let’s solve some questions about code coverage.</a>
         </li>
     
     </ul>
@@ -297,10 +301,10 @@
         
               <div>
                 
-  <div class="section" id="test-converage-in-python">
-<h1>Test converage in python<a class="headerlink" href="#test-converage-in-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="in-this-notebok-we-have-an-example-of-using-test-coverage">
-<h2>In this notebok, we have an example of using test coverage.<a class="headerlink" href="#in-this-notebok-we-have-an-example-of-using-test-coverage" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="hands-on-using-coverage-py">
+<h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="in-this-notebook-we-have-an-example-of-using-test-coverage">
+<h2>In this notebook, we have an example of using test coverage.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-test-coverage" title="Permalink to this headline">¶</a></h2>
 <p>The term <strong><code class="docutils literal notranslate"><span class="pre">coverage</span></code></strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -344,10 +348,10 @@
 </div>
 </div>
 </div>
-<p>Create a new test file and uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code>:</p>
+<p>Create a new tests file and uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#test.py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#tests.py</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
 <span class="c1">#from area import *</span>
@@ -361,8 +365,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="coverage-commands-1">
-<h2>Coverage commands [1]<a class="headerlink" href="#coverage-commands-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="coverage-commands">
+<h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
 <p>Run the follow command using the command line of your OS:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">run</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span></code></strong></p>
@@ -371,12 +375,55 @@
 <p>It is possible to create files that illustrate which parts were covered, illustrated through html pages. Run the following command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></p>
 <p>Open the generated file in <strong>path</strong>: <code class="docutils literal notranslate"><span class="pre">/htmlcov/index.html</span></code></p>
-<p>Now, let’s run more tests to check coverage.</p>
-<div class="section" id="add-more-tests-in-your-file">
-<h3>Add more tests in your file:<a class="headerlink" href="#add-more-tests-in-your-file" title="Permalink to this headline">¶</a></h3>
+<div id="index">
+    <table class="index">
+        <thead>
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left headerSortDown shortkey_n">Module</th>
+                <th class="shortkey_s">statements</th>
+                <th class="shortkey_m">missing</th>
+                <th class="shortkey_x">excluded</th>
+                <th class="right shortkey_c">coverage</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>13</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="13 15">85%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr class="file">
+                <td class="name left">area.py</a></td>
+                <td>7</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 7">71%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left">tests.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="8 8">100%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>Clicking on the <code class="docutils literal notranslate"><span class="pre">area.py</span></code> file, you will see which lines have been covered according to the following nomenclatures:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[5</span> <span class="pre">run]</span></code> - covered lines</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[2</span> <span class="pre">missing]</span></code> - lines not covered</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">excluded]</span></code> - excluded lines</p>
+<p><strong>Now, let’s run more tests to check coverage.</strong></p>
+<div class="section" id="add-more-tests-in-your-tests-file">
+<h3>Add more tests in your tests file:<a class="headerlink" href="#add-more-tests-in-your-tests-file" title="Permalink to this headline">¶</a></h3>
+<p>Remember of uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#test.py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#tests.py</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
 <span class="c1">#from area import *</span>
@@ -396,16 +443,17 @@
         <span class="c1">#Make sure type errors are raised when necessary</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="n">j</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-        <span class="c1">#self.assertRaises(TypeError, circle_area, &quot;text&quot;)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="section" id="run-again-the-coverage-commands-and-view-the-results">
+<h3>Run again the coverage commands and view the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-view-the-results" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="run-again-the-coverage-commands-1">
-<h2>Run again the coverage commands [1]<a class="headerlink" href="#run-again-the-coverage-commands-1" title="Permalink to this headline">¶</a></h2>
-<p>Now, let’s solve some questions about the content:</p>
+</div>
+<div class="section" id="now-let-s-solve-some-questions-about-code-coverage">
+<h2>Now, let’s solve some questions about code coverage.<a class="headerlink" href="#now-let-s-solve-some-questions-about-code-coverage" title="Permalink to this headline">¶</a></h2>
 <style>.embed-container2{
         position: relative;
         padding-bottom: 97.23%;
