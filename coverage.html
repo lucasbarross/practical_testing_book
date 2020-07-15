@@ -269,7 +269,7 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#in-this-notebook-we-have-an-example-of-using-test-coverage" class="nav-link">In this notebook, we have an example of using test coverage.</a>
+            <a href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" class="nav-link">In this notebook, we have an example of using code coverage with a unit testing example.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -303,9 +303,9 @@
                 
   <div class="section" id="hands-on-using-coverage-py">
 <h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="in-this-notebook-we-have-an-example-of-using-test-coverage">
-<h2>In this notebook, we have an example of using test coverage.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-test-coverage" title="Permalink to this headline">¶</a></h2>
-<p>The term <strong><code class="docutils literal notranslate"><span class="pre">coverage</span></code></strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
+<div class="section" id="in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
+<h2>In this notebook, we have an example of using code coverage with a unit testing example.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" title="Permalink to this headline">¶</a></h2>
+<p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -373,8 +373,8 @@
 <p>To see test coverage, run the coverage report:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">report</span> <span class="pre">-m</span></code></strong></p>
 <p>It is possible to create files that illustrate which parts were covered, illustrated through html pages. Run the following command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></p>
-<p>Open the generated file in <strong>path</strong>: <code class="docutils literal notranslate"><span class="pre">/htmlcov/index.html</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code></strong></p>
+<p>Open the generated file in <strong>path</strong>: <strong>/htmlcov/index.html</strong></p>
 <div id="index">
     <table class="index">
         <thead>
@@ -413,10 +413,10 @@
         </tbody>
     </table>
 </div>
-<p>Clicking on the <code class="docutils literal notranslate"><span class="pre">area.py</span></code> file, you will see which lines have been covered according to the following nomenclatures:</p>
+<p>Clicking on the <strong>area.py</strong> file, you will see which lines have been covered according to the following nomenclatures:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">[5</span> <span class="pre">run]</span></code> - covered lines</strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">[2</span> <span class="pre">missing]</span></code> - lines not covered</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">excluded]</span></code> - excluded lines</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">excluded]</span></code> - excluded lines</strong></p>
 <p><strong>Now, let’s run more tests to check coverage.</strong></p>
 <div class="section" id="add-more-tests-in-your-tests-file">
 <h3>Add more tests in your tests file:<a class="headerlink" href="#add-more-tests-in-your-tests-file" title="Permalink to this headline">¶</a></h3>
