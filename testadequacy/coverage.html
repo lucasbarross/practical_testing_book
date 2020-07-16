@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Test Coverage &#8212; The Practical Testing Book</title>
+    <title>Hands On: Using coverage.py &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -103,7 +103,7 @@
     <a href="idea.html">How Good Are your Tests?</a>
   </li>
   <li class="active">
-    <a href="">Test Coverage</a>
+    <a href="">Hands On: Using coverage.py</a>
   </li>
   <li class="">
     <a href="mutation.html">Mutation Testing</a>
@@ -215,9 +215,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testadequacy/coverage.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testadequacy/coverage.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -234,11 +234,58 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testadequacy/coverage.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testadequacy/coverage.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" class="nav-link">In this notebook, we have an example of using code coverage with a unit testing example.</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#add-more-tests-in-your-tests-file" class="nav-link">Add more tests in your tests file:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#run-again-the-coverage-commands-and-view-the-results" class="nav-link">Run again the coverage commands and view the results.</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#now-let-s-solve-some-questions-about-code-coverage" class="nav-link">Now, let’s solve some questions about code coverage.</a>
+        </li>
     
     </ul>
 </nav>
@@ -251,8 +298,156 @@
         
               <div>
                 
-  <div class="section" id="test-coverage">
-<h1>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hands-on-using-coverage-py">
+<h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
+<h2>In this notebook, we have an example of using code coverage with a unit testing example.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" title="Permalink to this headline">¶</a></h2>
+<p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;dwG656XIa40&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/dwG656XIa40"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>First, you have to install the package coverage in your machine, using the following command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span>
+</pre></div>
+</div>
+<p>Create a file to coverage with name area.py:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#area.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The radius must be a non-negative real number.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The radius must not be negative.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a new tests file and uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#tests.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="c1">#from area import *</span>
+
+<span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
+    <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Test area when radius &gt;= 0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="coverage-commands">
+<h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command using your operating system’s command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">discover</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">run</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">discover</span>
+</pre></div>
+</div>
+<p>to see the coverage, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">report</span> <span class="o">-</span><span class="n">m</span>
+</pre></div>
+</div>
+<p>It is possible to create files that illustrate which parts were covered, illustrated through html pages. Run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Open the generated file in the <strong>path</strong>: <strong>/htmlcov/index.html</strong></p>
+<img src="https://lh3.googleusercontent.com/lRWqgyhqO0bDSyk2cbU7lKGYnqGG9PE3fUD9zyFBKOHHy0goAWf6I-4yj5GaMlkij9r51kQItO8zsHd4LH14afnOF_jeURp4o23f60fj_UqgDNDtEp5ylvhJlexbQ0Fc4A7v8qp9_kHlS1gKLAjgVzNDhX81nMirAw-uv90SLvbEWWQXgiXB5mZOE0KLkB0YHqGiP3dx1Qu0NMzY2KWARpJseAWgq4teh5FYkv8axPEBAj3_JPELT70KdZEzmxlQMvSZtaMuDIQP30UQg0mnuDIcRuCTbYyESc9FE8K0GAp0wryAsuZ1Jowfpdol0YZtaPbD2qRqe2hRy-mPpsJkz8iPW8prxjE5WoD51gVODG4WJKn2nhSfVCPW_G2ikuOvrqiAx90MEaB6iaIlm_E9ULyWCmyOtgBWTA-dATSMWcDZsD2jktOIqzdpPsIVWqNSRsK7HtAbW44lPROKSRVGDR8S7GZbVvQac9J2YS2bDm2zYtIVtYWiGYNlHpNou-3MYjhxobR8PkD5WkIqpBiTV1hFigZ2dk1gsPhX_OXzdAKZi-r5-tiMhpNSkWo1adUw8vYy1tlF4hDWGBBTLogSFKQSWpjOSad9djBS-ArXPIKb6Tz-7ZsM61s7oltu5eiwZlulzo3iJayhgG3ANIlK-l9HL1zc3Y4_xQqCZL0L-0B4SwZLTWg0ATDrVj8A=w794-h292-no?authuser=0" class="center"/>
+<p>Clicking on the area.py file on the index.html page, you will see which lines have been covered, as shown on the picture below.</p>
+<img src="https://lh3.googleusercontent.com/JBQR3L5vpMtbvQ1FgyekuUe5sOv_mO1nGp3O28IrIer518DJfNkXMZdxd-zcd8L7-xxngm1TUpNoJ2ulAJ8vdkQmEwYwo9wIthOaQLr0nQgpO1_PRtX8NMr6QppSCCuZpW9HFms3MDKOs0MeE1cVO5PWVnHKhknMlvDGGov9tCI7r3Ms5Mgdki2UMyBwMB9qK11dwG0z-wUNtsl-A28IatZPFPqfFlzQietPoO0iPlYYLg5hoiA1ktfqY63zc9kh9uGKdB2-rCQV4xKB-f9tv6FvXW8miaI77Tk0tpvtsy6SlR8TJ3lfVXjPqx-2f--eUC9KlaUg96pUeJeU2eS31vN_KUL44ALCK0LMnoenU_hDLu09I6b4TjaZLWoTpMoc6ZKDpJT3QAefiFWo-oYiTStmY7xMf-Ncgbz7Gr_nJhzoxP6bdiVTp0eXzOy4Hp7pY67trUeIDdVxawW9rHi3BQqdX8UebCcHEAdlfKiJ7xQzzg16WV8_KvLbZKApeft9qLWezqx2n9PFB2GGk8EULmv1uO3j0-L-M3PWIs-elyfe3CBESCA1S0GQIMTb5qOPpHyFsnUH0czYSObqdnMXVezi29muy2MVmqw8jTwBhuJEOC11B35kbuq8b4lrTwYHtrU6a2awRvsw3Au5II3ydpL2pSNQkFo_T5BzYnW4f_sZ_K9oxGcS4JORnsmE=w674-h267-no?authuser=0" class="center"/>
+<p>Where:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[5</span> <span class="pre">run]</span></code> - are the covered lines</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[2</span> <span class="pre">missing]</span></code> - are the lines not covered</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">excluded]</span></code> - are the excluded lines</strong></p>
+<p><strong>Now, let’s run more tests to check coverage.</strong></p>
+<div class="section" id="add-more-tests-in-your-tests-file">
+<h3>Add more tests in your tests file:<a class="headerlink" href="#add-more-tests-in-your-tests-file" title="Permalink to this headline">¶</a></h3>
+<p>Remember of uncomment the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">area</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#tests.py</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="c1">#from area import *</span>
+
+<span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
+    <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Test area when radius &gt;= 0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mf">2.1</span><span class="p">),</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Make sure value errors are raised when necessary</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Make sure type errors are raised when necessary</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="n">j</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">circle_area</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-again-the-coverage-commands-and-view-the-results">
+<h3>Run again the coverage commands and view the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-view-the-results" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="now-let-s-solve-some-questions-about-code-coverage">
+<h2>Now, let’s solve some questions about code coverage.<a class="headerlink" href="#now-let-s-solve-some-questions-about-code-coverage" title="Permalink to this headline">¶</a></h2>
+<style>.embed-container2{
+        position: relative;
+        padding-bottom: 97.23%;
+        height=0;
+        overflow: hidden;
+        max-width: 100%;
+    }.embed-container2 iframe,
+    .embed-container2 object,
+    .embed-container2
+    embed { position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+</style>
+<div class="embed-container2">
+    <iframe
+                         src="https://docs.google.com/forms/d/e/1FAIpQLSfHPtBpdYVb_dr6o5O203Rl85YNK4mDOZYnnxSnX17QtQ9pRQ/viewform"
+            frameborder="0" marginheight="0" marginwidth="0">
+    </iframe>
+</div>
+</div>
 </div>
 
 

@@ -103,7 +103,7 @@
     <a href="../testadequacy/idea.html">How Good Are your Tests?</a>
   </li>
   <li class="">
-    <a href="../testadequacy/coverage.html">Test Coverage</a>
+    <a href="../testadequacy/coverage.html">Hands On: Using coverage.py</a>
   </li>
   <li class="">
     <a href="../testadequacy/mutation.html">Mutation Testing</a>
@@ -236,9 +236,24 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-is-git-bisect" class="nav-link">What is Git Bisect?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#how-it-works" class="nav-link">How it works?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#references" class="nav-link">References</a>
+        </li>
     
     </ul>
 </nav>
@@ -253,6 +268,31 @@
                 
   <div class="section" id="hands-on-git-bisect">
 <h1>Hands On: Git Bisect<a class="headerlink" href="#hands-on-git-bisect" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>What’s Git Bisect?</p></li>
+<li><p>How it works?</p></li>
+<li><p>References</p></li>
+</ol>
+<div class="section" id="what-is-git-bisect">
+<h2>What is Git Bisect?<a class="headerlink" href="#what-is-git-bisect" title="Permalink to this headline">¶</a></h2>
+<p>According to <a class="reference external" href="https://git-scm.com/docs/git-bisect">git documentation page</a> the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> command:</p>
+<blockquote>
+<div><p>… uses a binary algorithm to find which commit in your project’s history introduced a bug.</p>
+</div></blockquote>
+<p>Thus a motivation for using it is that a bug was introduced after some code was commited/pushed and someone needs to find it and fix it. Of course it’s possible to do this manually but with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> this task is much more easy.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>A common scenario in software development is when someone commits a code (probably without testing or executing automated tests locally) and it adds something that breaks the application (or even the automated tests). It’s also common to spend some time searching for what add that broken code to the repository. Usually developers do this effort getting back to a commit where the application was working well and go commit by commit running tests to check which one broke the application. This approach works but it can take some time. To obtain better results, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> is recommended in this scenario.</p>
+<p><a class="reference external" href="http://www.youtube.com/watch?v=D7JJnLFOn4A"><img alt="" src="http://img.youtube.com/vi/D7JJnLFOn4A/0.jpg" /></a></p>
+<p>(Click on image to open this video tutorial)</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/docs">Git documentation</a></p></li>
+</ul>
+</div>
 </div>
 
 
