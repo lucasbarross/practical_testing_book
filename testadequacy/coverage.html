@@ -281,14 +281,14 @@
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#run-again-the-coverage-commands-and-view-the-results" class="nav-link">Run again the coverage commands and view the results.</a>
+            <a href="#run-again-the-coverage-commands-and-see-the-results" class="nav-link">Run again the coverage commands and see the results.</a>
         </li>
     
             </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#running-on-your-computer" class="nav-link">Running on your computer</a>
+            <a href="#running-in-your-computer" class="nav-link">Running in your computer</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -361,7 +361,7 @@
 </div>
 </div>
 </div>
-<p>A file is created with the name area.py:</p>
+<p>Creating a file called area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">area</span><span class="o">.</span><span class="n">py</span>
@@ -384,7 +384,7 @@
 </div>
 </div>
 </div>
-<p>A test file is created with the name tests1.py:</p>
+<p>Creating a test file called tests1.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests1</span><span class="o">.</span><span class="n">py</span>
@@ -482,8 +482,8 @@ TOTAL          13      2    85%
 </div>
 </div>
 </div>
-<div class="section" id="run-again-the-coverage-commands-and-view-the-results">
-<h3>Run again the coverage commands and view the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-view-the-results" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="run-again-the-coverage-commands-and-see-the-results">
+<h3>Run again the coverage commands and see the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-see-the-results" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!coverage run -m unittest tests2
@@ -519,15 +519,15 @@ TOTAL          20      0   100%
 </div>
 </div>
 </div>
-<div class="section" id="running-on-your-computer">
-<h2>Running on your computer<a class="headerlink" href="#running-on-your-computer" title="Permalink to this headline">¶</a></h2>
-<p>You have to install the package coverage, using the following command line:</p>
+<div class="section" id="running-in-your-computer">
+<h2>Running in your computer<a class="headerlink" href="#running-in-your-computer" title="Permalink to this headline">¶</a></h2>
+<p>You need to install coverage.py, the simplest way is with pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span>
 </pre></div>
 </div>
-<p>Create a file to coverage with the name area.py.</p>
-<p>Create a tests file with the name tests.py:</p>
-<p>Run the following command using your operating system’s command line:</p>
+<p>Create a file to coverage called name area.py.</p>
+<p>Create a tests file called tests.py.</p>
+<p>Run the following command using command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">run</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">tests</span>
 </pre></div>
 </div>
@@ -535,7 +535,7 @@ TOTAL          20      0   100%
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">report</span> <span class="o">-</span><span class="n">m</span>
 </pre></div>
 </div>
-<p>It is possible to create files that show which parts were covered, using html pages. Run the following command:</p>
+<p>It is possible to create files that show which parts were covered using html pages. Run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">html</span>
 </pre></div>
 </div>
