@@ -277,7 +277,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#add-more-tests-in-your-tests-file-a-href-https-hub-gke-mybinder-org-user-damorimrg-practical-testing-book-o7yorafj-edit-testadequacy-tests2-py-target-blank-click-here-a-create-a-new-test-file-and-then-click-in-file-save" class="nav-link">Add more tests in your tests file <a href="https://hub.gke.mybinder.org/user/damorimrg-practical_testing_book-o7yorafj/edit/testadequacy/tests2.py" target="_blank">CLICK HERE</a>, create a new test file and then click in File -> Save.</a>
+            <a href="#add-more-tests-in-your-tests-file" class="nav-link">Add more tests in your tests file:</a>
         </li>
     
         <li class="nav-item toc-entry toc-h3">
@@ -361,10 +361,11 @@
 </div>
 </div>
 </div>
-<p>A file has been created to coverage with the name area.py, to edit it <a href="https://hub.gke.mybinder.org/user/damorimrg-practical_testing_book-o7yorafj/edit/testadequacy/area.py" target="_blank">CLICK HERE</a>.</p>
+<p>A file has been created to coverage with the name area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load area.py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">area</span><span class="o">.</span><span class="n">py</span>
+
 <span class="c1">#area.py</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
@@ -377,12 +378,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing area.py
+</pre></div>
 </div>
-<p>A test file has been created with the name tests.py, to edit it <a href="https://hub.gke.mybinder.org/user/damorimrg-practical_testing_book-o7yorafj/edit/testadequacy/tests.py" target="_blank">CLICK HERE</a>.</p>
+</div>
+</div>
+<p>A test file has been created with the name tests1.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load tests.py</span>
-<span class="c1">#tests.py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests1</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1">#tests1.py</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">from</span> <span class="nn">area</span> <span class="kn">import</span> <span class="o">*</span>
@@ -394,21 +401,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests1.py
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="coverage-commands">
 <h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">area</span>
-<span class="kn">import</span> <span class="nn">tests</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!coverage run -m unittest tests
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!coverage run -m unittest tests1
 </pre></div>
 </div>
 </div>
@@ -429,12 +433,12 @@ OK
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Name       Stmts   Miss  Cover   Missing
-----------------------------------------
-area.py        7      2    71%   6, 8
-tests.py       6      0   100%
-----------------------------------------
-TOTAL         13      2    85%
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Name        Stmts   Miss  Cover   Missing
+-----------------------------------------
+area.py         7      2    71%   7, 9
+tests1.py       6      0   100%
+-----------------------------------------
+TOTAL          13      2    85%
 </pre></div>
 </div>
 </div>
@@ -449,11 +453,12 @@ TOTAL         13      2    85%
 <div class="section" id="now-let-s-run-more-tests-to-check-coverage">
 <h3>Now, let’s run more tests to check coverage.<a class="headerlink" href="#now-let-s-run-more-tests-to-check-coverage" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="add-more-tests-in-your-tests-file-a-href-https-hub-gke-mybinder-org-user-damorimrg-practical-testing-book-o7yorafj-edit-testadequacy-tests2-py-target-blank-click-here-a-create-a-new-test-file-and-then-click-in-file-save">
-<h3>Add more tests in your tests file <a href="https://hub.gke.mybinder.org/user/damorimrg-practical_testing_book-o7yorafj/edit/testadequacy/tests2.py" target="_blank">CLICK HERE</a>, create a new test file and then click in <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span></code>.<a class="headerlink" href="#add-more-tests-in-your-tests-file-a-href-https-hub-gke-mybinder-org-user-damorimrg-practical-testing-book-o7yorafj-edit-testadequacy-tests2-py-target-blank-click-here-a-create-a-new-test-file-and-then-click-in-file-save" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="add-more-tests-in-your-tests-file">
+<h3>Add more tests in your tests file:<a class="headerlink" href="#add-more-tests-in-your-tests-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load tests2.py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests2</span><span class="o">.</span><span class="n">py</span>
+
 <span class="c1">#tests2.py</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
@@ -477,18 +482,15 @@ TOTAL         13      2    85%
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="run-again-the-coverage-commands-and-view-the-results">
-<h3>Run again the coverage commands and view the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-view-the-results" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">area</span>
-<span class="kn">import</span> <span class="nn">tests2</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests2.py
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="run-again-the-coverage-commands-and-view-the-results">
+<h3>Run again the coverage commands and view the results.<a class="headerlink" href="#run-again-the-coverage-commands-and-view-the-results" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!coverage run -m unittest tests2
