@@ -338,36 +338,6 @@
 ></iframe>
 </div></div>
 </div>
-<p>To install the package coverage in this notebook, use the following commands:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
-
-!conda init
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
-
-import sys
-!conda install --yes --prefix {sys.prefix} coverage
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
-
-!conda update --yes -n base conda
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>%%capture</strong> is used to hide the cell output.</p>
 <p>Creating a file called area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
