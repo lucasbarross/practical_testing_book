@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Hands On: Using coverage.py &#8212; The Practical Testing Book</title>
+    <title>Hands On: Using TDD &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,6 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mutation Testing" href="mutation.html" />
-    <link rel="prev" title="How Good Are your Tests?" href="idea.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -102,8 +100,8 @@
   <li class="">
     <a href="idea.html">How Good Are your Tests?</a>
   </li>
-  <li class="active">
-    <a href="">Hands On: Using coverage.py</a>
+  <li class="">
+    <a href="coverage.html">Hands On: Using coverage.py</a>
   </li>
   <li class="">
     <a href="mutation.html">Mutation Testing</a>
@@ -215,7 +213,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testadequacy/coverage.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testadequacy/tdd.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -239,7 +237,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testadequacy/coverage.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testadequacy/tdd.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -247,7 +245,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testadequacy/coverage.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testadequacy/tdd.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -306,8 +304,8 @@
         
               <div>
                 
-  <div class="section" id="hands-on-using-coverage-py">
-<h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hands-on-using-tdd">
+<h1>Hands On: Using TDD<a class="headerlink" href="#hands-on-using-tdd" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
 <h2>In this notebook, we have an example of using code coverage with a unit testing example.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" title="Permalink to this headline">¶</a></h2>
 <p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
@@ -565,8 +563,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="idea.html" title="previous page">How Good Are your Tests?</a>
-    <a class='right-next' id="next-link" href="mutation.html" title="next page">Mutation Testing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

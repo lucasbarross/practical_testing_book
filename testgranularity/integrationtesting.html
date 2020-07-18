@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="System Testing" href="systemtesting.html" />
+    <link rel="next" title="Mocking with Python Mock" href="mocking.html" />
     <link rel="prev" title="Unit Testing" href="unittesting.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,6 +89,11 @@
   </li>
   <li class="active">
     <a href="">Integration Testing</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="mocking.html">Mocking with Python Mock</a>
+    </li>
+  </ul>
   </li>
   <li class="">
     <a href="systemtesting.html">System Testing</a>
@@ -244,7 +249,47 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#hands-on" class="nav-link">Hands on</a>
+            <a href="#big-bang" class="nav-link">Big Bang</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#incremental-approach" class="nav-link">Incremental Approach</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#top-down" class="nav-link">Top Down</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#stubs" class="nav-link">Stubs</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#bottom-up" class="nav-link">Bottom Up</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#driver" class="nav-link">Driver</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#other-ways-of-simulating-objects-in-testing" class="nav-link">Other ways of simulating objects in testing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#mocks" class="nav-link">Mocks</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#dummy" class="nav-link">Dummy</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
         </li>
     
     </ul>
@@ -260,11 +305,47 @@
                 
   <div class="section" id="integration-testing">
 <h1>Integration Testing<a class="headerlink" href="#integration-testing" title="Permalink to this headline">¶</a></h1>
-<p>– Explain the concept –</p>
-<p>– Introduce stubs, mocks —</p>
-<div class="section" id="hands-on">
-<h2>Hands on<a class="headerlink" href="#hands-on" title="Permalink to this headline">¶</a></h2>
-<p>– use some mock library in Python –</p>
+<p>It is a step in the testing process that lies among unit tests and system tests. All the modules of the system, that ideally were tested in unit tests, are combined  to guarantee that they work together properly. We can consider that it works as a preparation for System tests. Data is transferred between the modules and is tested thoroughly.</p>
+<p>Let’s consider a scenario where an application is developed, and its modules are assigned to different developers. Using the image below as an example, each module could be due to a different programer to develop in order to increase velocity.</p>
+<p><img alt="Diagram" src="../_images/system_diagram.jpeg" /></p>
+<p>How the development of integration tests for this system could have be done?</p>
+<div class="section" id="big-bang">
+<h2>Big Bang<a class="headerlink" href="#big-bang" title="Permalink to this headline">¶</a></h2>
+<p>This approach would wait every module to be fully coded in order to write tests. It doesn’t sound as a good idea, as the time of development would increase. Also, testing all of them at once makes harder to trace errors.</p>
+</div>
+<div class="section" id="incremental-approach">
+<h2>Incremental Approach<a class="headerlink" href="#incremental-approach" title="Permalink to this headline">¶</a></h2>
+<p>The Incremental Approach keeps on testing every module as long as they are available for testing. Here, we face a challenge: Imagine that <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">B</span></code> in our example above is the first to be ready. How do we test if it works together with other modules as they are not ready? We can use <code class="docutils literal notranslate"><span class="pre">Drivers</span></code> or <code class="docutils literal notranslate"><span class="pre">Stubs</span></code> depending on what approach we choose.</p>
+<div class="section" id="top-down">
+<h3>Top Down<a class="headerlink" href="#top-down" title="Permalink to this headline">¶</a></h3>
+<p>To test if it works well with the modules beneath it, we can make the use of <code class="docutils literal notranslate"><span class="pre">Stubs</span></code> to simulate the behavior of the missing modules.</p>
+<div class="section" id="stubs">
+<h4>Stubs<a class="headerlink" href="#stubs" title="Permalink to this headline">¶</a></h4>
+<p>A <code class="docutils literal notranslate"><span class="pre">stub</span></code> is a simpler object that have pre-determined answers for calls made during the test execution. Usually, it doesn’t do anything extra about what was specifically coded for the test itself.</p>
+<p>In our case, to test the integration between <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">D</span></code>, for example, we could make a <code class="docutils literal notranslate"><span class="pre">stub</span></code> of the <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">D</span></code> in order to mock its behavior and test if <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">B</span></code> is working properly with it.</p>
+</div>
+</div>
+<div class="section" id="bottom-up">
+<h3>Bottom Up<a class="headerlink" href="#bottom-up" title="Permalink to this headline">¶</a></h3>
+<p>Similarly to the situation we face with the lack of <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">A</span></code> could not be ready for integration. So we also have to simulate the behavior of <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">A</span></code>, to test the integration with <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">B</span></code>. That’s when <code class="docutils literal notranslate"><span class="pre">Drivers</span></code> come to action.</p>
+<div class="section" id="driver">
+<h4>Driver<a class="headerlink" href="#driver" title="Permalink to this headline">¶</a></h4>
+<p>Drivers are designed to simulate the behavior of modules placed in a upper level. They work as a provisional module to provide the same effect that would be achieved by calling the actual module.</p>
+</div>
+</div>
+<div class="section" id="other-ways-of-simulating-objects-in-testing">
+<h3>Other ways of simulating objects in testing<a class="headerlink" href="#other-ways-of-simulating-objects-in-testing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mocks">
+<h4>Mocks<a class="headerlink" href="#mocks" title="Permalink to this headline">¶</a></h4>
+<p>Mocking is a technique that aims to create simulated version of services or objects related to your program, not mattering wether internal or external, that can effectively replace its real versions in order to make the test faster and more reliable. When the code interacts with an object, with its functions or attributes, a mock can be used instead.</p>
+</div>
+<div class="section" id="dummy">
+<h4>Dummy<a class="headerlink" href="#dummy" title="Permalink to this headline">¶</a></h4>
+<p>Dummy objects are those with no functionality, but its purpose in testing is basically fill in parameters, for example.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -278,7 +359,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="unittesting.html" title="previous page">Unit Testing</a>
-    <a class='right-next' id="next-link" href="systemtesting.html" title="next page">System Testing</a>
+    <a class='right-next' id="next-link" href="mocking.html" title="next page">Mocking with Python <code class="docutils literal notranslate"><span class="pre">Mock</span></code></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
