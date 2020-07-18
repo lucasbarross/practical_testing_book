@@ -215,9 +215,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testgeneration/fuzzing.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testgeneration/fuzzing.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -234,11 +234,68 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testgeneration/fuzzing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testgeneration/fuzzing.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#" class="nav-link">Fuzzing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#hands-on-with-pythonfuzz" class="nav-link">Hands on with pythonfuzz</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#defining-a-test-subject" class="nav-link">Defining a test subject</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#example" class="nav-link">Example</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#results" class="nav-link">Results</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conclusion" class="nav-link">Conclusion</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#references" class="nav-link">References</a>
+        </li>
     
     </ul>
 </nav>
@@ -253,6 +310,336 @@
                 
   <div class="section" id="fuzzing">
 <h1>Fuzzing<a class="headerlink" href="#fuzzing" title="Permalink to this headline">¶</a></h1>
+<p>Fuzzing is a software testing technique in which the goal is to automatically feed a given program with a sequence of randomly generated inputs in order to find errors or inadequate behaviors in its execution. The generation of inputs is made by a program called a Fuzzer, which usually strives to create data that is valid enough to be accepted by the test subject while also hitting some obscure edge-case the developers had never thought of. This technique is also very useful for discovering security vulnerabilities in a given system since the random inputs might trigger some exploitable behavior such as a buffer overflows or DoS. <br/>
+In the following short video we can see a bit more about the effectiveness of this technique and how it came to be.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;RqrHT93KdgE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/RqrHT93KdgE"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="section" id="hands-on-with-pythonfuzz">
+<h2>Hands on with pythonfuzz<a class="headerlink" href="#hands-on-with-pythonfuzz" title="Permalink to this headline">¶</a></h2>
+<p>The fuzzer known as <a class="reference external" href="https://gitlab.com/gitlab-org/security-products/analyzers/fuzzers/pythonfuzz"><em>pythonfuzz</em></a> is a simple yet powerful example of what a fuzzer can do. In essence, all it does is receive a function which will be called infinitely with different randomly generated inputs each time until it eventually finds an unexpected exception. <br/>
+First things first, let’s install it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pythonfuzz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/galileu/.local/lib/python3.8/site-packages (1.0.3)
+Requirement already satisfied: coverage==4.5.4 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
+Requirement already satisfied: psutil==5.6.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
+Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-a-test-subject">
+<h1>Defining a test subject<a class="headerlink" href="#defining-a-test-subject" title="Permalink to this headline">¶</a></h1>
+<p>For this example, let’s test the parsing method in Python’s built-in html module. <br/>
+In order for the test to work, we’ll need to create a function that:</p>
+<ol class="simple">
+<li><p>Is annotated with the <code class="docutils literal notranslate"><span class="pre">&#64;PythonFuzz</span></code> annotation in order to be ran in a loop and receive the randomized parameters.</p></li>
+<li><p>Receives an array of bytes as its only parameter and converts it to the format that the test subjects accepts as input.</p></li>
+<li><p>Calls the test subject with the converted input.</p></li>
+<li><p>Catches and ignores any expected exceptions that might appear in runtime.</p></li>
+</ol>
+<p>Note that in the last point we state that some exceptions should be intentionally ignored. This is because they might actually be the correct and expected behavior of the tested code or even thrown by our byte array parser itself. In the following example we’ll try to decode random byte arrays into ascii strings, an operation that will oftentimes fail and, as such, we should just ignore it and continue to the next input.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cleaning sys.argv for compatibility with Jupyter-Notebook</span>
+<span class="c1"># This should be unnecessary in a vanilla Python environment</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">html.parser</span> <span class="kn">import</span> <span class="n">HTMLParser</span>
+<span class="kn">from</span> <span class="nn">pythonfuzz.main</span> <span class="kn">import</span> <span class="n">PythonFuzz</span>
+
+<span class="nd">@PythonFuzz</span>
+<span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">HTMLParser</span><span class="p">()</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">fuzz</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 16 rss: 111.3671875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 51 corp: 2 exec/s: 465 rss: 111.3984375 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#69 NEW     cov: 77 corp: 3 exec/s: 1814 rss: 111.3984375 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1504 NEW     cov: 101 corp: 4 exec/s: 1900 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1649 NEW     cov: 105 corp: 5 exec/s: 1880 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1897 NEW     cov: 118 corp: 6 exec/s: 1873 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1902 NEW     cov: 138 corp: 7 exec/s: 1398 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2264 NEW     cov: 143 corp: 8 exec/s: 1894 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2266 NEW     cov: 471 corp: 9 exec/s: 1089 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#3555 NEW     cov: 472 corp: 10 exec/s: 1807 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#5517 NEW     cov: 494 corp: 11 exec/s: 1841 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#7397 NEW     cov: 502 corp: 12 exec/s: 1787 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#9786 NEW     cov: 510 corp: 13 exec/s: 1776 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#10916 NEW     cov: 512 corp: 14 exec/s: 1699 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#18808 NEW     cov: 525 corp: 15 exec/s: 1679 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#19512 NEW     cov: 533 corp: 16 exec/s: 1666 rss: 111.41015625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#22414 NEW     cov: 548 corp: 17 exec/s: 1684 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#30876 NEW     cov: 555 corp: 18 exec/s: 1748 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#31936 NEW     cov: 561 corp: 19 exec/s: 1882 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#32070 NEW     cov: 570 corp: 20 exec/s: 1761 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#34227 NEW     cov: 572 corp: 21 exec/s: 1688 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#36213 NEW     cov: 579 corp: 22 exec/s: 1749 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#39178 NEW     cov: 590 corp: 23 exec/s: 1750 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#49823 PULSE     cov: 595 corp: 24 exec/s: 2128 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#60800 PULSE     cov: 595 corp: 24 exec/s: 2195 rss: 111.5078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>subclasses of ParserBase must override error()
+Traceback (most recent call last):
+  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
+    target(buf)
+  File &quot;&lt;ipython-input-4-320b3bd4190b&gt;&quot;, line 9, in fuzz
+    parser.feed(string)
+  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 111, in feed
+    self.goahead(0)
+  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 179, in goahead
+    k = self.parse_html_declaration(i)
+  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 264, in parse_html_declaration
+    return self.parse_marked_section(i)
+  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 149, in parse_marked_section
+    sectName, j = self._scan_name( i+3, i )
+  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 390, in _scan_name
+    self.error(&quot;expected name token at %r&quot;
+  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 33, in error
+    raise NotImplementedError(
+NotImplementedError: subclasses of ParserBase must override error()
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-4095b6edbadab5437ea755d22e21620efa7970719636f6d4cdb7a73f8dbb184f
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash = 3c215b5b
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="results">
+<h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
+<p>Given enough time, hopefully the previous code snippet should be able to find an unhandled exception in the html parser, usually the <code class="docutils literal notranslate"><span class="pre">NotImplementedError:</span> <span class="pre">subclasses</span> <span class="pre">of</span> <span class="pre">ParserBase</span> <span class="pre">must</span> <span class="pre">override</span> <span class="pre">error()</span></code>.
+It will also conveniently save the error-causing input in a file which name it states in the end of its execution so that we can see it and analyze the exception cause. The file’s content will be an array of bytes, so you might want to convert it to your intended format before analyzing. <br/></p>
+<p>In our execution’s case, pythonfuzz said that the input that caused an error was <code class="docutils literal notranslate"><span class="pre">&lt;![!&gt;</span></code>. Let’s check if that holds true.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">HTMLParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="s1">&#39;&lt;![!&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">c7c095a1c741</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">HTMLParser</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">parser</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="s1">&#39;&lt;![!&gt;&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">feed</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">         self.rawdata = self.rawdata + data</span>
+<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">         self.goahead(0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">     def close(self):</span>
+
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">goahead</span><span class="nt">(self, end)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span><span class="s2">                     k = self.parse_pi(i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span><span class="s2">                 elif startswith(&quot;&lt;!&quot;, i):</span>
+<span class="ne">--&gt; </span><span class="mi">179</span><span class="s2">                     k = self.parse_html_declaration(i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span><span class="s2">                 elif (i + 1) &lt; n:</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="s2">                     self.handle_data(&quot;&lt;&quot;)</span>
+
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">parse_html_declaration</span><span class="nt">(self, i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="s2">             return self.parse_comment(i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="s2">         elif rawdata[i:i+3] == &#39;&lt;![&#39;:</span>
+<span class="ne">--&gt; </span><span class="mi">264</span><span class="s2">             return self.parse_marked_section(i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="s2">         elif rawdata[i:i+9].lower() == &#39;&lt;!doctype&#39;:</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="s2">             # find the closing &gt;</span>
+
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">parse_marked_section</span><span class="nt">(self, i, report)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="s2">         rawdata= self.rawdata</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span><span class="s2">         assert rawdata[i:i+3] == &#39;&lt;![&#39;, &quot;unexpected call to parse_marked_section()&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">149</span><span class="s2">         sectName, j = self._scan_name( i+3, i )</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="s2">         if j &lt; 0:</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="s2">             return j</span>
+
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">_scan_name</span><span class="nt">(self, i, declstartpos)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span><span class="s2">             self.updatepos(declstartpos, i)</span>
+<span class="ne">--&gt; </span><span class="mi">390</span><span class="s2">             self.error(&quot;expected name token at </span><span class="si">%r</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="s2">                        </span><span class="si">% r</span><span class="s2">awdata[declstartpos:declstartpos+20])</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span><span class="s2"> </span>
+
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">error</span><span class="nt">(self, message)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="s2">     def error(self, message):</span>
+<span class="ne">---&gt; </span><span class="mi">33</span><span class="s2">         raise NotImplementedError(</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="s2">             &quot;subclasses of ParserBase must override error()&quot;)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
+
+<span class="ne">NotImplementedError</span>: subclasses of ParserBase must override error()
+</pre></div>
+</div>
+</div>
+</div>
+<p>In fact, it seems like this input really breaks the html parser. <br/>
+Now, what about using it to test our own programs? Well, we can apply the same principles as before. For the next example, let’s create a hypothetical function that receives an integer but raises an exception when this integer is 74.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intFunc</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">integer</span> <span class="o">==</span> <span class="mi">74</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;oh no&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;ok&quot;</span>
+
+<span class="nd">@PythonFuzz</span>
+<span class="k">def</span> <span class="nf">fuzz2</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">integer</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">)</span>  
+        <span class="n">intFunc</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">SyntaxError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<span class="n">fuzz2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 26 rss: 113.046875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 266 rss: 113.078125 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
+Traceback (most recent call last):
+  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
+    target(buf)
+  File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 11, in fuzz2
+    intFunc(integer)
+  File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 3, in intFunc
+    raise Exception(&#39;oh no&#39;)
+Exception: oh no
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash = 4a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that in this case we also used the <code class="docutils literal notranslate"><span class="pre">try/except</span></code> block to pass when finding a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. This is because not all byte arrays can be converted to integers and we wouldn’t want the fuzzer to stop its execution because of that, so it must just move on to the next input and try again.</p>
+</div>
+<div class="section" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
+<p>As seen in our example, fuzzers are very easy to use and even develop. I encourage you to take a look into pythonfuzz’s repository and see how simple the implementation really is. You might even be able to contribute since it is open-source! This technique is also quite powerful, as it can find edge-cases that a human mind would hardly have even thought of. <br/>
+If you want to learn more deeply about fuzzing, I highly recommend you to read the spectacular <a class="reference external" href="https://www.fuzzingbook.org/">Fuzzing Book</a> by Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler. It really enters in detail about every single aspect of this technique and is an accessible read even for beginner programmers.</p>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>https://en.wikipedia.org/wiki/Fuzzing</p></li>
+<li><p>https://www.fuzzingbook.org/</p></li>
+<li><p>https://owasp.org/www-community/Fuzzing</p></li>
+<li><p>http://www.squarefree.com/categories/fuzzing/</p></li>
+<li><p>https://gitlab.com/gitlab-org/security-products/analyzers/fuzzers/pythonfuzz</p></li>
+</ol>
 </div>
 
 
