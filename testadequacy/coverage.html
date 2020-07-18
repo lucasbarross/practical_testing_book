@@ -313,7 +313,9 @@
 <h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
 <h2>In this notebook, we have an example of using code coverage with a unit testing example.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" title="Permalink to this headline">¶</a></h2>
-<p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
+<blockquote>
+<div><p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -338,6 +340,19 @@
 ></iframe>
 </div></div>
 </div>
+<p>To install the package coverage in this notebook, use the following commands:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
+
+import sys
+!conda install --yes --prefix {sys.prefix} coverage
+!conda update --yes -n base conda
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">%%capture</span></code> is used to hide the cell output.</p>
 <p>Creating a file called area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
