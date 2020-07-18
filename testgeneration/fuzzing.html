@@ -341,10 +341,10 @@ First things first, let’s install it:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/galileu/.local/lib/python3.8/site-packages (1.0.3)
-Requirement already satisfied: coverage==4.5.4 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
-Requirement already satisfied: psutil==5.6.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
-Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/fernando/.local/lib/python3.8/site-packages (1.0.3)
+Requirement already satisfied: numpy==1.17.3 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
+Requirement already satisfied: coverage==4.5.4 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
+Requirement already satisfied: psutil==5.6.3 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -391,114 +391,11 @@ In order for the test to work, we’ll need to create a function that:</p>
     <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
         <span class="k">pass</span>
 
-<span class="n">fuzz</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 16 rss: 111.3671875 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 51 corp: 2 exec/s: 465 rss: 111.3984375 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#69 NEW     cov: 77 corp: 3 exec/s: 1814 rss: 111.3984375 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1504 NEW     cov: 101 corp: 4 exec/s: 1900 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1649 NEW     cov: 105 corp: 5 exec/s: 1880 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1897 NEW     cov: 118 corp: 6 exec/s: 1873 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1902 NEW     cov: 138 corp: 7 exec/s: 1398 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2264 NEW     cov: 143 corp: 8 exec/s: 1894 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2266 NEW     cov: 471 corp: 9 exec/s: 1089 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#3555 NEW     cov: 472 corp: 10 exec/s: 1807 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#5517 NEW     cov: 494 corp: 11 exec/s: 1841 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#7397 NEW     cov: 502 corp: 12 exec/s: 1787 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#9786 NEW     cov: 510 corp: 13 exec/s: 1776 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#10916 NEW     cov: 512 corp: 14 exec/s: 1699 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#18808 NEW     cov: 525 corp: 15 exec/s: 1679 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#19512 NEW     cov: 533 corp: 16 exec/s: 1666 rss: 111.41015625 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#22414 NEW     cov: 548 corp: 17 exec/s: 1684 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#30876 NEW     cov: 555 corp: 18 exec/s: 1748 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#31936 NEW     cov: 561 corp: 19 exec/s: 1882 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#32070 NEW     cov: 570 corp: 20 exec/s: 1761 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#34227 NEW     cov: 572 corp: 21 exec/s: 1688 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#36213 NEW     cov: 579 corp: 22 exec/s: 1749 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#39178 NEW     cov: 590 corp: 23 exec/s: 1750 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#49823 PULSE     cov: 595 corp: 24 exec/s: 2128 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#60800 PULSE     cov: 595 corp: 24 exec/s: 2195 rss: 111.5078125 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>subclasses of ParserBase must override error()
-Traceback (most recent call last):
-  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
-    target(buf)
-  File &quot;&lt;ipython-input-4-320b3bd4190b&gt;&quot;, line 9, in fuzz
-    parser.feed(string)
-  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 111, in feed
-    self.goahead(0)
-  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 179, in goahead
-    k = self.parse_html_declaration(i)
-  File &quot;/usr/lib/python3.8/html/parser.py&quot;, line 264, in parse_html_declaration
-    return self.parse_marked_section(i)
-  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 149, in parse_marked_section
-    sectName, j = self._scan_name( i+3, i )
-  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 390, in _scan_name
-    self.error(&quot;expected name token at %r&quot;
-  File &quot;/usr/lib/python3.8/_markupbase.py&quot;, line 33, in error
-    raise NotImplementedError(
-NotImplementedError: subclasses of ParserBase must override error()
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-4095b6edbadab5437ea755d22e21620efa7970719636f6d4cdb7a73f8dbb184f
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash = 3c215b5b
+<span class="c1"># This `if` statement is here to prevent a possible long execution from happening everytime this book is built</span>
+<span class="c1"># Just consider that we are calling the fuzz function normally</span>
+<span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">fuzz</span><span class="p">()</span>
+    
 </pre></div>
 </div>
 </div>
@@ -599,15 +496,18 @@ Now, what about using it to test our own programs? Well, we can apply the same p
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 26 rss: 113.046875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 34 rss: 112.140625 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 266 rss: 113.078125 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 342 rss: 112.171875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#6019 PULSE     cov: 55 corp: 3 exec/s: 1203 rss: 112.171875 MB
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
 Traceback (most recent call last):
-  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
+  File &quot;/home/fernando/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
     target(buf)
   File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 11, in fuzz2
     intFunc(integer)
