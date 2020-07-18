@@ -14,20 +14,20 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/sphinx-book-theme.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script type="text/javascript" src="../_static/togglebutton.js"></script>
-    <script type="text/javascript" src="../_static/clipboard.min.js"></script>
-    <script type="text/javascript" src="../_static/copybutton.js"></script>
-    <script type="text/javascript" src="../_static/mystnb.js"></script>
-    <script type="text/javascript" src="../_static/sphinx-book-theme.js"></script>
-    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Hands On: TDD" href="tdd.html" />
@@ -64,285 +64,120 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
   <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Introduction
-  </a>
- </li>
+  <li class="">
+    <a href="../intro.html">Introduction</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Fundamentals</p>
+</li>
+  <li class="">
+    <a href="../fundamentals/basics.html">Motivation and Basic Definitions</a>
+  </li>
+  <li class="">
+    <a href="../fundamentals/limitations.html">Limitations</a>
+  </li>
+  <li class="">
+    <a href="../fundamentals/kinds.html">The Different Dimensions of Testing</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Test Granularity</p>
+</li>
+  <li class="">
+    <a href="../testgranularity/unittesting.html">Unit Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgranularity/integrationtesting.html">Integration Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgranularity/systemtesting.html">System Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgranularity/acceptancetesting.html">Acceptance Testing</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Test Adequacy</p>
+</li>
+  <li class="">
+    <a href="idea.html">How Good Are your Tests?</a>
+  </li>
+  <li class="active">
+    <a href="">Hands On: Using coverage.py</a>
+  </li>
+  <li class="">
+    <a href="tdd.html">Hands On: TDD</a>
+  </li>
+  <li class="">
+    <a href="mutation.html">Mutation Testing</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Test Generation</p>
+</li>
+  <li class="">
+    <a href="../testgeneration/modelbased.html">Model-Based Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgeneration/combinatorial.html">Combinatorial Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgeneration/random.html">Randomized Testing</a>
+  </li>
+  <li class="">
+    <a href="../testgeneration/fuzzing.html">Fuzzing</a>
+  </li>
+  <li class="">
+    <a href="../testgeneration/propertybased.html">Property-based Testing</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Regression Testing</p>
+</li>
+  <li class="">
+    <a href="../testregression/buildsystems.html">Build Systems</a>
+  </li>
+  <li class="">
+    <a href="../testregression/continuousintegration.html">Continuous Integration</a>
+  </li>
+  <li class="">
+    <a href="../testregression/flakytests.html">Flaky Tests</a>
+  </li>
+  <li class="">
+    <a href="../testregression/selectionprio.html">Test Selection and Prioritization</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Debugging</p>
+</li>
+  <li class="">
+    <a href="../debugging/scientific.html">Scientific Debugging</a>
+  </li>
+  <li class="">
+    <a href="../debugging/gitbisect.html">Hands On: Git Bisect</a>
+  </li>
+  <li class="">
+    <a href="../debugging/deltadebugging.html">Hands On: Delta Debugging</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Mocking</p>
+</li>
+  <li class="">
+    <a href="../mocking/basics.html">Basics</a>
+  </li>
+  <li class="">
+    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Misc</p>
+</li>
+  <li class="">
+    <a href="../misc/credits.html">Credits</a>
+  </li>
+  <li class="">
+    <a href="../misc/howtohelp.html">How To Help</a>
+  </li>
+  <li class="">
+    <a href="../misc/tobedone.html">TODOs</a>
+  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Fundamentals
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/basics.html">
-   Motivation and Basic Definitions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/limitations.html">
-   Limitations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/kinds.html">
-   The Different Dimensions of Testing
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Test Granularity
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgranularity/unittesting.html">
-   Unit Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgranularity/integrationtesting.html">
-   Integration Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgranularity/systemtesting.html">
-   System Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgranularity/acceptancetesting.html">
-   Acceptance Testing
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Test Adequacy
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="idea.html">
-   How Good Are your Tests?
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Hands On: Using coverage.py
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tdd.html">
-   Hands On: TDD
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mutation.html">
-   Mutation Testing
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Test Generation
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/modelbased.html">
-   Model-Based Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/combinatorial.html">
-   Combinatorial Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/random.html">
-   Randomized Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/fuzzing.html">
-   Fuzzing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/fuzzing.html#defining-a-test-subject">
-   Defining a test subject
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/fuzzing.html#results">
-   Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/fuzzing.html#conclusion">
-   Conclusion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/fuzzing.html#references">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/propertybased.html">
-   Property-based Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/propertybased.html#why">
-   Why?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/propertybased.html#how">
-   How?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/propertybased.html#example-hypothesis">
-   Example: Hypothesis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testgeneration/propertybased.html#references">
-   References
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Regression Testing
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html">
-   Build Systems
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#getting-started-with-gradle">
-   Getting Started With Gradle
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#example-project">
-   Example Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#the-build-file">
-   The Build file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#the-projects-code">
-   The project’s code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#compiling-the-project">
-   Compiling the project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#testing-the-code">
-   Testing the Code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/continuousintegration.html">
-   Continuous Integration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/flakytests.html">
-   Flaky Tests
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/selectionprio.html">
-   Test Selection and Prioritization
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Debugging
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../debugging/scientific.html">
-   Scientific Debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../debugging/gitbisect.html">
-   Hands On: Git Bisect
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../debugging/deltadebugging.html">
-   Hands On: Delta Debugging
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Mocking
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../mocking/basics.html">
-   Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mocking/notebook.html">
-   Mocking with Python
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Mock
-    </span>
-   </code>
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Misc
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../misc/credits.html">
-   Credits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../misc/howtohelp.html">
-   How To Help
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../misc/tobedone.html">
-   TODOs
-  </a>
- </li>
-</ul>
-
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -425,54 +260,48 @@
 </div>
 
     </div>
-
-    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
-   In this notebook, we have an example of using code coverage with a unit testing example.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coverage-commands">
-   Coverage commands
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-let-s-run-more-tests-to-check-the-code-coverage">
-     Now, let’s run more tests to check the code coverage.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-more-tests">
-     Adding more tests:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-again-the-coverage-commands-and-see-the-results">
-     Run again the coverage commands and see the results.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-in-your-computer">
-   Running in your computer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-let-s-solve-some-questions-about-code-coverage">
-   Now, let’s solve some questions about code coverage.
-  </a>
- </li>
-</ul>
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
-        </nav>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" class="nav-link">In this notebook, we have an example of using code coverage with a unit testing example.</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#now-let-s-run-more-tests-to-check-the-code-coverage" class="nav-link">Now, let’s run more tests to check the code coverage.</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#adding-more-tests" class="nav-link">Adding more tests:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#run-again-the-coverage-commands-and-see-the-results" class="nav-link">Run again the coverage commands and see the results.</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#running-in-your-computer" class="nav-link">Running in your computer</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#now-let-s-solve-some-questions-about-code-coverage" class="nav-link">Now, let’s solve some questions about code coverage.</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
     </div>
 </div>
     <div id="main-content" class="row">
@@ -487,7 +316,7 @@
 <p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 </pre></div>
 </div>
 </div>
@@ -518,471 +347,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Collecting package metadata (current_repodata.json): - 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Solving environment: \ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-## Package Plan ##
-
-  environment location: /home/emmanuel/anaconda3
-
-  added / updated specs:
-    - coverage
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    conda-4.8.3                |           py37_0         2.8 MB
-    coverage-5.0               |   py37h7b6447c_0         250 KB
-    ------------------------------------------------------------
-                                           Total:         3.1 MB
-
-The following NEW packages will be INSTALLED:
-
-  coverage           pkgs/main/linux-64::coverage-5.0-py37h7b6447c_0
-
-The following packages will be UPDATED:
-
-  conda                                       4.7.12-py37_0 --&gt; 4.8.3-py37_0
-
-
-
-Downloading and Extracting Packages
-
-coverage-5.0         | 250 KB    |                                       |   0% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-coverage-5.0         | 250 KB    | ##3                                   |   6% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-coverage-5.0         | 250 KB    | ###################################5  |  96% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-coverage-5.0         | 250 KB    | ##################################### | 100% 
-
-conda-4.8.3          | 2.8 MB    |                                       |   0% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #4                                    |   4% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##2                                   |   6% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #######7                              |  21% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #########5                            |  26% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ###########4                          |  31% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #############2                        |  36% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##############8                       |  40% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ################7                     |  45% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##################3                   |  50% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ###################9                  |  54% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #####################6                |  58% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #######################2              |  63% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #########################             |  68% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##########################7           |  72% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ############################3         |  77% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | #############################9        |  81% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ################################      |  87% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##################################    |  92% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ###################################9  |  97% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-4.8.3          | 2.8 MB    | ##################################### | 100% 
-Preparing transaction: - 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Verifying transaction: | 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Executing transaction: \ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/bin/bash: conda: command not found
 </pre></div>
 </div>
 </div>
@@ -994,410 +359,7 @@ Executing transaction: \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Collecting package metadata (current_repodata.json): - 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Solving environment: | 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-## Package Plan ##
-
-  environment location: /home/emmanuel/anaconda3
-
-  added / updated specs:
-    - conda
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    backports.functools_lru_cache-1.6.1|             py_0          11 KB
-    conda-package-handling-1.6.1|   py37h7b6447c_0         798 KB
-    future-0.18.2              |           py37_1         631 KB
-    ------------------------------------------------------------
-                                           Total:         1.4 MB
-
-The following packages will be UPDATED:
-
-  backports.functoo~                               1.5-py_2 --&gt; 1.6.1-py_0
-  conda-package-han~                   1.6.0-py37h7b6447c_0 --&gt; 1.6.1-py37h7b6447c_0
-  future                                      0.17.1-py37_0 --&gt; 0.18.2-py37_1
-
-
-
-Downloading and Extracting Packages
-
-future-0.18.2        | 631 KB    |                                       |   0% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-future-0.18.2        | 631 KB    | 9                                     |   3% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-future-0.18.2        | 631 KB    | ############2                         |  33% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-future-0.18.2        | 631 KB    | #####################5                |  58% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-future-0.18.2        | 631 KB    | ###########################2          |  74% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-future-0.18.2        | 631 KB    | ##################################### | 100% 
-
-backports.functools_ | 11 KB     |                                       |   0% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-backports.functools_ | 11 KB     | ##################################### | 100% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-
-conda-package-handli | 798 KB    |                                       |   0% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | ###7                                  |  10% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | ##########3                           |  28% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | ##############                        |  38% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | #########################2            |  68% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | ####################################3 |  98% 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-conda-package-handli | 798 KB    | ##################################### | 100% 
-Preparing transaction: - 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Verifying transaction: | 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
-Executing transaction: \ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>done
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>/bin/bash: conda: command not found
 </pre></div>
 </div>
 </div>
@@ -1408,7 +370,7 @@ Executing transaction: \
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">area</span><span class="o">.</span><span class="n">py</span>
 
 <span class="c1">#area.py</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
 <span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
@@ -1420,7 +382,7 @@ Executing transaction: \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing area.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting area.py
 </pre></div>
 </div>
 </div>
@@ -1431,9 +393,9 @@ Executing transaction: \
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests1</span><span class="o">.</span><span class="n">py</span>
 
 <span class="c1">#tests1.py</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
-<span class="kn">from</span> <span class="nn">area</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">area</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
     <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1443,7 +405,7 @@ Executing transaction: \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests1.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting tests1.py
 </pre></div>
 </div>
 </div>
@@ -1494,9 +456,9 @@ TOTAL          13      2    85%
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests2</span><span class="o">.</span><span class="n">py</span>
 
 <span class="c1">#tests2.py</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
-<span class="kn">from</span> <span class="nn">area</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">area</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">class</span> <span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> 
     <span class="k">def</span> <span class="nf">test_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1517,7 +479,7 @@ TOTAL          13      2    85%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests2.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting tests2.py
 </pre></div>
 </div>
 </div>
