@@ -273,16 +273,20 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#coverage-commands" class="nav-link">Coverage commands</a><ul class="nav section-nav flex-column">
+            <a href="#installing-the-package-coverage-in-this-notebook" class="nav-link">Installing the package coverage in this notebook:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#creating-the-files" class="nav-link">Creating the files</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#coverage-commands" class="nav-link">Coverage commands</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#adding-more-tests-to-check-the-code-coverage" class="nav-link">Adding more tests to check the code coverage.</a><ul class="nav section-nav flex-column">
                 
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#now-let-s-run-more-tests-to-check-the-code-coverage" class="nav-link">Now, let’s run more tests to check the code coverage.</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#adding-more-tests" class="nav-link">Adding more tests:</a>
-        </li>
-    
         <li class="nav-item toc-entry toc-h3">
             <a href="#run-again-the-coverage-commands-and-see-the-results" class="nav-link">Run again the coverage commands and see the results.</a>
         </li>
@@ -340,7 +344,9 @@
 ></iframe>
 </div></div>
 </div>
-<p>To install the package coverage in this notebook, use the following commands:</p>
+</div>
+<div class="section" id="installing-the-package-coverage-in-this-notebook">
+<h2>Installing the package coverage in this notebook:<a class="headerlink" href="#installing-the-package-coverage-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
@@ -353,6 +359,9 @@ import sys
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">%%capture</span></code> is used to hide the cell output.</p>
+</div>
+<div class="section" id="creating-the-files">
+<h2>Creating the files<a class="headerlink" href="#creating-the-files" title="Permalink to this headline">¶</a></h2>
 <p>Creating a file called area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -435,11 +444,9 @@ TOTAL          13      2    85%
 </div>
 </div>
 </div>
-<div class="section" id="now-let-s-run-more-tests-to-check-the-code-coverage">
-<h3>Now, let’s run more tests to check the code coverage.<a class="headerlink" href="#now-let-s-run-more-tests-to-check-the-code-coverage" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="adding-more-tests">
-<h3>Adding more tests:<a class="headerlink" href="#adding-more-tests" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-more-tests-to-check-the-code-coverage">
+<h2>Adding more tests to check the code coverage.<a class="headerlink" href="#adding-more-tests-to-check-the-code-coverage" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">tests2</span><span class="o">.</span><span class="n">py</span>
@@ -470,7 +477,6 @@ TOTAL          13      2    85%
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting tests2.py
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -542,7 +548,15 @@ TOTAL          20      0   100%
 </div>
 <div class="section" id="now-let-s-solve-some-questions-about-code-coverage">
 <h2>Now, let’s solve some questions about code coverage.<a class="headerlink" href="#now-let-s-solve-some-questions-about-code-coverage" title="Permalink to this headline">¶</a></h2>
-<style>.embed-container2{
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;forms.html&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>.embed-container2{
         position: relative;
         padding-bottom: 97.23%;
         height=0;
@@ -557,11 +571,13 @@ TOTAL          20      0   100%
         width: 100%;
         height: 100%; }
 </style>
+
 <div class="embed-container2">
     <iframe
                          src="https://docs.google.com/forms/d/e/1FAIpQLSfHPtBpdYVb_dr6o5O203Rl85YNK4mDOZYnnxSnX17QtQ9pRQ/viewform"
             frameborder="0" marginheight="0" marginwidth="0">
     </iframe>
+</div></div></div>
 </div>
 </div>
 </div>
