@@ -157,15 +157,6 @@
     <a href="deltadebugging.html">Hands On: Delta Debugging</a>
   </li>
 <li class="navbar-special">
-<p class="margin-caption">Mocking</p>
-</li>
-  <li class="">
-    <a href="../mocking/basics.html">Basics</a>
-  </li>
-  <li class="">
-    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
-  </li>
-<li class="navbar-special">
 <p class="margin-caption">Misc</p>
 </li>
   <li class="">
@@ -277,6 +268,14 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#basic-commands" class="nav-link">Basic commands</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#automated-tests-with-git-bisect-run" class="nav-link">Automated tests with git bisect run</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#references" class="nav-link">References</a>
         </li>
     
@@ -329,10 +328,34 @@
 </div></div>
 </div>
 </div>
+<div class="section" id="basic-commands">
+<h2>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bisect</span> <span class="n">start</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bisect</span> <span class="n">good</span> <span class="o">&lt;</span><span class="n">commit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bisect</span> <span class="n">bad</span> <span class="o">&lt;</span><span class="n">commit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bisect</span> <span class="n">reset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="automated-tests-with-git-bisect-run">
+<h2>Automated tests with git bisect run<a class="headerlink" href="#automated-tests-with-git-bisect-run" title="Permalink to this headline">¶</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">run</span></code> allows running scripts while checking for errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bisect</span> <span class="n">run</span> <span class="o">./</span><span class="n">script</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>More detailed information can be found <a class="reference external" href="https://goiabada.blog/git-tricks-debugging-with-git-bisect-78f72807436f#3309">here</a>.</p>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://git-scm.com/docs">Git documentation</a></p></li>
+<li><p><a class="reference external" href="https://goiabada.blog/git-tricks-debugging-with-git-bisect-78f72807436f">Git tricks: Debugging with git bisect</a></p></li>
 </ul>
 </div>
 </div>

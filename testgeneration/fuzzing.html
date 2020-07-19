@@ -157,15 +157,6 @@
     <a href="../debugging/deltadebugging.html">Hands On: Delta Debugging</a>
   </li>
 <li class="navbar-special">
-<p class="margin-caption">Mocking</p>
-</li>
-  <li class="">
-    <a href="../mocking/basics.html">Basics</a>
-  </li>
-  <li class="">
-    <a href="../mocking/notebook.html">Mocking with Python Mock</a>
-  </li>
-<li class="navbar-special">
 <p class="margin-caption">Misc</p>
 </li>
   <li class="">
@@ -344,10 +335,10 @@ First things first, let’s install it:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/galileu/.local/lib/python3.8/site-packages (1.0.3)
-Requirement already satisfied: psutil==5.6.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
-Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
-Requirement already satisfied: coverage==4.5.4 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/fernando/.local/lib/python3.8/site-packages (1.0.3)
+Requirement already satisfied: psutil==5.6.3 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
+Requirement already satisfied: coverage==4.5.4 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
+Requirement already satisfied: numpy==1.17.3 in /home/fernando/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -499,24 +490,48 @@ Now, what about using it to test our own programs? Well, we can apply the same p
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 39 rss: 112.48046875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 31 rss: 112.0390625 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 294 rss: 113.04296875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 264 rss: 112.06640625 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#24763 PULSE     cov: 55 corp: 3 exec/s: 4951 rss: 113.04296875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#7824 PULSE     cov: 55 corp: 3 exec/s: 1564 rss: 112.07421875 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#50025 PULSE     cov: 55 corp: 3 exec/s: 5052 rss: 113.04296875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#13950 PULSE     cov: 55 corp: 3 exec/s: 1225 rss: 112.07421875 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#73455 PULSE     cov: 55 corp: 3 exec/s: 4685 rss: 113.04296875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#21340 PULSE     cov: 55 corp: 3 exec/s: 1477 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#28885 PULSE     cov: 55 corp: 3 exec/s: 1508 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#36142 PULSE     cov: 55 corp: 3 exec/s: 1451 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#43784 PULSE     cov: 55 corp: 3 exec/s: 1528 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#51369 PULSE     cov: 55 corp: 3 exec/s: 1516 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#58655 PULSE     cov: 55 corp: 3 exec/s: 1457 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#66286 PULSE     cov: 55 corp: 3 exec/s: 1526 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#73943 PULSE     cov: 55 corp: 3 exec/s: 1531 rss: 112.07421875 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#81633 PULSE     cov: 55 corp: 3 exec/s: 1537 rss: 112.07421875 MB
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
 Traceback (most recent call last):
-  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
+  File &quot;/home/fernando/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
     target(buf)
   File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 11, in fuzz2
     intFunc(integer)
