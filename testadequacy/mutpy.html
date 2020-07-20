@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How To Help &#8212; The Practical Testing Book</title>
+    <title>Hands On: MutPy &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="TODOs" href="tobedone.html" />
-    <link rel="prev" title="Credits" href="credits.html" />
+    <link rel="next" title="Model-Based Testing" href="../testgeneration/modelbased.html" />
+    <link rel="prev" title="Mutation Testing" href="mutation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -125,29 +125,29 @@
   Test Adequacy
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../testadequacy/idea.html">
+  <a class="reference internal" href="idea.html">
    How Good Are your Tests?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testadequacy/coverage.html">
+  <a class="reference internal" href="coverage.html">
    Hands On: Using coverage.py
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testadequacy/tdd.html">
+  <a class="reference internal" href="tdd.html">
    Hands On: TDD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testadequacy/mutation.html">
+  <a class="reference internal" href="mutation.html">
    Mutation Testing
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testadequacy/mutpy.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Hands On: MutPy
   </a>
  </li>
@@ -313,19 +313,19 @@
   Misc
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="credits.html">
+  <a class="reference internal" href="../misc/credits.html">
    Credits
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/howtohelp.html">
    How To Help
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tobedone.html">
+  <a class="reference internal" href="../misc/tobedone.html">
    TODOs
   </a>
  </li>
@@ -371,7 +371,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/misc/howtohelp.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testadequacy/mutpy.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,35 +407,8 @@
         
               <div>
                 
-  <div class="section" id="how-to-help">
-<h1>How To Help<a class="headerlink" href="#how-to-help" title="Permalink to this headline">¶</a></h1>
-<p>The sources of this book are at two different locations:</p>
-<p>This is the repo for the demos:</p>
-<p><a href="https://github.com/damorimRG/practical_testing_book_demos">https://github.com/damorimRG/practical_testing_book_demos</a></p>
-<p>and this is the repo of the book itself:</p>
-<p><a href="https://github.com/damorimRG/practical_testing_book">https://github.com/damorimRG/practical_testing_book</a></p>
-<p>Essentials about editing the book:</p>
-<ul class="simple">
-<li><p>To contribute, you need to file a Pull Request so that we have the
-chance to review your contributions.</p></li>
-<li><p>This book is created with Jupyter books. To understand the basic of
-Jupyter books skim through <a
-href="https://jupyterbook.org/start/overview.html">this page</a>.</p>
-<ul>
-<li><p>Two file formats can be used: .md and .pynb. The first is the
-typical markdown files whereas the later are Python (Jupyter)
-Notebooks that we can use to demonstrate concepts.</p></li>
-<li><p>For Python notebooks, the book provides two kinds of integration:
-Binder and Google Colab. When the book shows one of those file you
-will see corresponding icons on the top of the page.</p></li>
-</ul>
-</li>
-<li><p>There are two scripts on the repo that you should know: build.sh and
-deploy.sh. The first script builds the static web site (under
-directory _build) whereas the second script deploys it in a GitHub
-page branch (gh-pages). Remember that you won’t be able to push
-things to the repo (only submit PRs).</p></li>
-</ul>
+  <div class="section" id="hands-on-mutpy">
+<h1>Hands On: MutPy<a class="headerlink" href="#hands-on-mutpy" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -447,8 +420,8 @@ things to the repo (only submit PRs).</p></li>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="credits.html" title="previous page">Credits</a>
-    <a class='right-next' id="next-link" href="tobedone.html" title="next page">TODOs</a>
+    <a class='left-prev' id="prev-link" href="mutation.html" title="previous page">Mutation Testing</a>
+    <a class='right-next' id="next-link" href="../testgeneration/modelbased.html" title="next page">Model-Based Testing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

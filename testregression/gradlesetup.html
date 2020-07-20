@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How To Help &#8212; The Practical Testing Book</title>
+    <title>Example Project &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="TODOs" href="tobedone.html" />
-    <link rel="prev" title="Credits" href="credits.html" />
+    <link rel="next" title="Continuous Integration" href="continuousintegration.html" />
+    <link rel="prev" title="Build Systems" href="buildsystems.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -229,59 +229,66 @@
   Regression Testing
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html">
+  <a class="reference internal" href="buildsystems.html">
    Build Systems
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#getting-started-with-gradle">
+  <a class="reference internal" href="buildsystems.html#getting-started-with-gradle">
    Getting Started With Gradle
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#exercise-time">
+  <a class="reference internal" href="buildsystems.html#exercise-time">
    Exercise Time!
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#the-build-file">
+  <a class="reference internal" href="buildsystems.html#the-build-file">
    The Build file
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#the-projects-code">
+  <a class="reference internal" href="buildsystems.html#the-projects-code">
    The project’s code
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#compiling-the-project">
+  <a class="reference internal" href="buildsystems.html#compiling-the-project">
    Compiling the project
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#testing-the-code">
+  <a class="reference internal" href="buildsystems.html#testing-the-code">
    Testing the Code
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/buildsystems.html#proposed-exercise">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="buildsystems.html#proposed-exercise">
    Proposed Exercise
   </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Example Project
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/continuousintegration.html">
+  <a class="reference internal" href="continuousintegration.html">
    Continuous Integration
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/flakytests.html">
+  <a class="reference internal" href="flakytests.html">
    Flaky Tests
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../testregression/selectionprio.html">
+  <a class="reference internal" href="selectionprio.html">
    Test Selection and Prioritization
   </a>
  </li>
@@ -313,19 +320,19 @@
   Misc
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="credits.html">
+  <a class="reference internal" href="../misc/credits.html">
    Credits
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/howtohelp.html">
    How To Help
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tobedone.html">
+  <a class="reference internal" href="../misc/tobedone.html">
    TODOs
   </a>
  </li>
@@ -371,7 +378,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/misc/howtohelp.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testregression/gradlesetup.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,35 +414,71 @@
         
               <div>
                 
-  <div class="section" id="how-to-help">
-<h1>How To Help<a class="headerlink" href="#how-to-help" title="Permalink to this headline">¶</a></h1>
-<p>The sources of this book are at two different locations:</p>
-<p>This is the repo for the demos:</p>
-<p><a href="https://github.com/damorimRG/practical_testing_book_demos">https://github.com/damorimRG/practical_testing_book_demos</a></p>
-<p>and this is the repo of the book itself:</p>
-<p><a href="https://github.com/damorimRG/practical_testing_book">https://github.com/damorimRG/practical_testing_book</a></p>
-<p>Essentials about editing the book:</p>
-<ul class="simple">
-<li><p>To contribute, you need to file a Pull Request so that we have the
-chance to review your contributions.</p></li>
-<li><p>This book is created with Jupyter books. To understand the basic of
-Jupyter books skim through <a
-href="https://jupyterbook.org/start/overview.html">this page</a>.</p>
-<ul>
-<li><p>Two file formats can be used: .md and .pynb. The first is the
-typical markdown files whereas the later are Python (Jupyter)
-Notebooks that we can use to demonstrate concepts.</p></li>
-<li><p>For Python notebooks, the book provides two kinds of integration:
-Binder and Google Colab. When the book shows one of those file you
-will see corresponding icons on the top of the page.</p></li>
-</ul>
-</li>
-<li><p>There are two scripts on the repo that you should know: build.sh and
-deploy.sh. The first script builds the static web site (under
-directory _build) whereas the second script deploys it in a GitHub
-page branch (gh-pages). Remember that you won’t be able to push
-things to the repo (only submit PRs).</p></li>
-</ul>
+  <div class="section" id="example-project">
+<h1>Example Project<a class="headerlink" href="#example-project" title="Permalink to this headline">¶</a></h1>
+<p>First you have to create a new directory on your computer where the project will be set up. Once in this directory, execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>From now on, the tool will guide you through the setup of your project. The first screen provided asks you to choose a type of project to create.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">project</span> <span class="n">to</span> <span class="n">generate</span><span class="p">:</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="n">basic</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="n">application</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="n">library</span>
+  <span class="mi">4</span><span class="p">:</span> <span class="n">Gradle</span> <span class="n">plugin</span>
+<span class="n">Enter</span> <span class="n">selection</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">basic</span><span class="p">)</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For our example, we will use an application type project. Then, the language used in the development of the project is requested</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Select</span> <span class="n">implementation</span> <span class="n">language</span><span class="p">:</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="n">C</span><span class="o">++</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="n">Groovy</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="n">Java</span>
+  <span class="mi">4</span><span class="p">:</span> <span class="n">Kotlin</span>
+  <span class="mi">5</span><span class="p">:</span> <span class="n">Swift</span>
+<span class="n">Enter</span> <span class="n">selection</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">Java</span><span class="p">)</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In our example, we will use the Java language. Then, the language used in the gradle settings is requested.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">build</span> <span class="n">script</span> <span class="n">DSL</span><span class="p">:</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="n">Groovy</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="n">Kotlin</span>
+<span class="n">Enter</span> <span class="n">selection</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">Groovy</span><span class="p">)</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In our example, we will use the Groovy language. Then, we ask for the framework used for the tests, here is an important comment: the gradle also automates tests and the execution of tests in the project! We will explore this during this tutorial.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">test</span> <span class="n">framework</span><span class="p">:</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="n">JUnit</span> <span class="mi">4</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="n">TestNG</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="n">Spock</span>
+  <span class="mi">4</span><span class="p">:</span> <span class="n">JUnit</span> <span class="n">Jupiter</span>
+<span class="n">Enter</span> <span class="n">selection</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">JUnit</span> <span class="mi">4</span><span class="p">)</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In our example, we will use the JUnit 4 framework. Finally, you must provide the name of the project and the source package of your project, both of your choice. We will use gradle_demo as project and source names.</p>
+<p>Once this process is finished, your directory will now be filled with a file structure that must be respected during the development of your project, so that the gradle can act effectively. This structure can be seen in the scheme below. We will highlight two elements created: the build.gradle file, where specifications of the build process are written that will be detailed later, and the src folder, which contains the project classes (main directory), and the test classes (in the test directory). Note that the gradle generated automatic java files to populate these directories. You can modify these files and add others according to the needs of your project.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── gradle_demo
+    │   │       └── App.java
+    │   └── resources
+    └── test
+        ├── java
+        │   └── gradle_demo
+        │       └── AppTest.java
+        └── resources
+</pre></div>
+</div>
 </div>
 
 
@@ -447,8 +490,8 @@ things to the repo (only submit PRs).</p></li>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="credits.html" title="previous page">Credits</a>
-    <a class='right-next' id="next-link" href="tobedone.html" title="next page">TODOs</a>
+    <a class='left-prev' id="prev-link" href="buildsystems.html" title="previous page">Build Systems</a>
+    <a class='right-next' id="next-link" href="continuousintegration.html" title="next page">Continuous Integration</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
