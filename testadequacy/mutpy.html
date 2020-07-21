@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Hands On: TDD &#8212; The Practical Testing Book</title>
+    <title>Hands On: MutPy &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mutation Testing" href="mutation.html" />
-    <link rel="prev" title="Hands On: Using coverage.py" href="coverage.html" />
+    <link rel="next" title="Model-Based Testing" href="../testgeneration/modelbased.html" />
+    <link rel="prev" title="Mutation Testing" href="mutation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -105,14 +105,14 @@
   <li class="">
     <a href="coverage.html">Hands On: Using coverage.py</a>
   </li>
-  <li class="active">
-    <a href="">Hands On: TDD</a>
+  <li class="">
+    <a href="tdd.html">Hands On: TDD</a>
   </li>
   <li class="">
     <a href="mutation.html">Mutation Testing</a>
   </li>
-  <li class="">
-    <a href="mutpy.html">Hands On: MutPy</a>
+  <li class="active">
+    <a href="">Hands On: MutPy</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Generation</p>
@@ -212,9 +212,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/testadequacy/tdd.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/testadequacy/mutpy.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -230,28 +230,6 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/damorimRG/practical_testing_book/master?urlpath=tree/testadequacy/tdd.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/damorimRG/practical_testing_book/blob/master/testadequacy/tdd.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -270,45 +248,8 @@
         
               <div>
                 
-  <div class="section" id="hands-on-tdd">
-<h1>Hands On: TDD<a class="headerlink" href="#hands-on-tdd" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-
-<span class="k">def</span> <span class="nf">fat</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="n">number</span> <span class="o">*</span> <span class="n">fat</span><span class="p">(</span><span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">TestFatorial</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_fat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fat</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fat</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fat</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="mi">120</span><span class="p">)</span>
-
-        
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;first-arg-is-ignored&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">.</pre>
-</div>
-<div class="stderr docutils container">
-<pre class="stderr literal-block">
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-OK
-</pre>
-</div>
-</div>
-</div>
+  <div class="section" id="hands-on-mutpy">
+<h1>Hands On: MutPy<a class="headerlink" href="#hands-on-mutpy" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -320,8 +261,8 @@ OK
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="coverage.html" title="previous page">Hands On: Using coverage.py</a>
-    <a class='right-next' id="next-link" href="mutation.html" title="next page">Mutation Testing</a>
+    <a class='left-prev' id="prev-link" href="mutation.html" title="previous page">Mutation Testing</a>
+    <a class='right-next' id="next-link" href="../testgeneration/modelbased.html" title="next page">Model-Based Testing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
