@@ -340,9 +340,9 @@ First things first, let’s install it:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/galileu/.local/lib/python3.8/site-packages (1.0.3)
+Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
 Requirement already satisfied: coverage==4.5.4 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
 Requirement already satisfied: psutil==5.6.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
-Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -494,19 +494,13 @@ Now, what about using it to test our own programs? Well, we can apply the same p
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 17 rss: 112.2265625 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 36 rss: 112.4921875 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 371 rss: 112.2734375 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 259 rss: 112.53125 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#18210 PULSE     cov: 55 corp: 3 exec/s: 3641 rss: 112.2734375 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#37098 PULSE     cov: 55 corp: 3 exec/s: 3777 rss: 112.2734375 MB
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#56121 PULSE     cov: 55 corp: 3 exec/s: 3804 rss: 112.2734375 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#22610 PULSE     cov: 55 corp: 3 exec/s: 4521 rss: 112.53125 MB
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
