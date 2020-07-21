@@ -28,6 +28,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Property-based Testing" href="propertybased.html" />
@@ -103,7 +104,7 @@
     <a href="../testadequacy/idea.html">How Good Are your Tests?</a>
   </li>
   <li class="">
-    <a href="../testadequacy/coverage.html">Hands On: Using coverage.py</a>
+    <a href="../testadequacy/coverage.html">Structural Testing</a>
   </li>
   <li class="">
     <a href="../testadequacy/tdd.html">Hands On: TDD</a>
@@ -338,26 +339,10 @@ First things first, let’s install it:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Collecting pythonfuzz
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Collecting coverage==4.5.4 (from pythonfuzz)
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>  Using cached https://files.pythonhosted.org/packages/51/b1/13609068fff1c8c056f0c4601ad6985cf5c1bbfc529196ab08bd2a57dc39/coverage-4.5.4-cp36-cp36m-manylinux1_x86_64.whl
-Collecting psutil==5.6.3 (from pythonfuzz)
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Collecting numpy==1.17.3 (from pythonfuzz)
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>  Using cached https://files.pythonhosted.org/packages/0e/46/ae6773894f7eacf53308086287897ec568eac9768918d913d5b9d366c5db/numpy-1.17.3-cp36-cp36m-manylinux1_x86_64.whl
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Installing collected packages: coverage, psutil, numpy, pythonfuzz
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Successfully installed coverage-4.5.4 numpy-1.17.3 psutil-5.6.3 pythonfuzz-1.0.3
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pythonfuzz in /home/galileu/.local/lib/python3.8/site-packages (1.0.3)
+Requirement already satisfied: coverage==4.5.4 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (4.5.4)
+Requirement already satisfied: psutil==5.6.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (5.6.3)
+Requirement already satisfied: numpy==1.17.3 in /home/galileu/.local/lib/python3.8/site-packages (from pythonfuzz) (1.17.3)
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -434,47 +419,47 @@ It will also conveniently save the error-causing input in a file which name it s
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">HTMLParser</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">parser</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="s1">&#39;&lt;![!&gt;&#39;</span><span class="p">)</span>
 
-<span class="nn">/usr/lib/python3.6/html/parser.py</span> in <span class="ni">feed</span><span class="nt">(self, data)</span>
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">feed</span><span class="nt">(self, data)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="s2">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">         self.rawdata = self.rawdata + data</span>
 <span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">         self.goahead(0)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2"> </span>
 <span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">     def close(self):</span>
 
-<span class="nn">/usr/lib/python3.6/html/parser.py</span> in <span class="ni">goahead</span><span class="nt">(self, end)</span>
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">goahead</span><span class="nt">(self, end)</span>
 <span class="g g-Whitespace">    </span><span class="mi">177</span><span class="s2">                     k = self.parse_pi(i)</span>
 <span class="g g-Whitespace">    </span><span class="mi">178</span><span class="s2">                 elif startswith(&quot;&lt;!&quot;, i):</span>
 <span class="ne">--&gt; </span><span class="mi">179</span><span class="s2">                     k = self.parse_html_declaration(i)</span>
 <span class="g g-Whitespace">    </span><span class="mi">180</span><span class="s2">                 elif (i + 1) &lt; n:</span>
 <span class="g g-Whitespace">    </span><span class="mi">181</span><span class="s2">                     self.handle_data(&quot;&lt;&quot;)</span>
 
-<span class="nn">/usr/lib/python3.6/html/parser.py</span> in <span class="ni">parse_html_declaration</span><span class="nt">(self, i)</span>
+<span class="nn">/usr/lib/python3.8/html/parser.py</span> in <span class="ni">parse_html_declaration</span><span class="nt">(self, i)</span>
 <span class="g g-Whitespace">    </span><span class="mi">262</span><span class="s2">             return self.parse_comment(i)</span>
 <span class="g g-Whitespace">    </span><span class="mi">263</span><span class="s2">         elif rawdata[i:i+3] == &#39;&lt;![&#39;:</span>
 <span class="ne">--&gt; </span><span class="mi">264</span><span class="s2">             return self.parse_marked_section(i)</span>
 <span class="g g-Whitespace">    </span><span class="mi">265</span><span class="s2">         elif rawdata[i:i+9].lower() == &#39;&lt;!doctype&#39;:</span>
 <span class="g g-Whitespace">    </span><span class="mi">266</span><span class="s2">             # find the closing &gt;</span>
 
-<span class="nn">/usr/lib/python3.6/_markupbase.py</span> in <span class="ni">parse_marked_section</span><span class="nt">(self, i, report)</span>
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">parse_marked_section</span><span class="nt">(self, i, report)</span>
 <span class="g g-Whitespace">    </span><span class="mi">147</span><span class="s2">         rawdata= self.rawdata</span>
 <span class="g g-Whitespace">    </span><span class="mi">148</span><span class="s2">         assert rawdata[i:i+3] == &#39;&lt;![&#39;, &quot;unexpected call to parse_marked_section()&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">149</span><span class="s2">         sectName, j = self._scan_name( i+3, i )</span>
 <span class="g g-Whitespace">    </span><span class="mi">150</span><span class="s2">         if j &lt; 0:</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span><span class="s2">             return j</span>
 
-<span class="nn">/usr/lib/python3.6/_markupbase.py</span> in <span class="ni">_scan_name</span><span class="nt">(self, i, declstartpos)</span>
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">_scan_name</span><span class="nt">(self, i, declstartpos)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span><span class="s2">         else:</span>
 <span class="g g-Whitespace">    </span><span class="mi">389</span><span class="s2">             self.updatepos(declstartpos, i)</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span><span class="s2">             self.error(&quot;expected name token at </span><span class="si">%r</span><span class="s2">&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">391</span><span class="s2">                        </span><span class="si">% r</span><span class="s2">awdata[declstartpos:declstartpos+20])</span>
+<span class="ne">--&gt; </span><span class="mi">390</span><span class="s2">             self.error(&quot;expected name token at </span><span class="si">%r</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="s2">                        </span><span class="si">% r</span><span class="s2">awdata[declstartpos:declstartpos+20])</span>
 <span class="g g-Whitespace">    </span><span class="mi">392</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="s2">     # To be overridden -- handlers for unknown objects</span>
 
-<span class="nn">/usr/lib/python3.6/_markupbase.py</span> in <span class="ni">error</span><span class="nt">(self, message)</span>
+<span class="nn">/usr/lib/python3.8/_markupbase.py</span> in <span class="ni">error</span><span class="nt">(self, message)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="s2"> </span>
 <span class="g g-Whitespace">     </span><span class="mi">32</span><span class="s2">     def error(self, message):</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s2">         raise NotImplementedError(</span>
-<span class="ne">---&gt; </span><span class="mi">34</span><span class="s2">             &quot;subclasses of ParserBase must override error()&quot;)</span>
+<span class="ne">---&gt; </span><span class="mi">33</span><span class="s2">         raise NotImplementedError(</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="s2">             &quot;subclasses of ParserBase must override error()&quot;)</span>
 <span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">     def reset(self):</span>
 
 <span class="ne">NotImplementedError</span>: subclasses of ParserBase must override error()
 </pre></div>
@@ -509,27 +494,30 @@ Now, what about using it to test our own programs? Well, we can apply the same p
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 11 rss: 116.4609375 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 47 rss: 112.26953125 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 28 corp: 2 exec/s: 124 rss: 116.48828125 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 498 rss: 112.31640625 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#10779 PULSE     cov: 54 corp: 3 exec/s: 2155 rss: 116.515625 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#18193 PULSE     cov: 55 corp: 3 exec/s: 3638 rss: 112.31640625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#35746 PULSE     cov: 55 corp: 3 exec/s: 3510 rss: 112.31640625 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#52662 PULSE     cov: 55 corp: 3 exec/s: 3382 rss: 112.31640625 MB
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
 Traceback (most recent call last):
-  File &quot;/home/gabriela/.local/lib/python3.6/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
+  File &quot;/home/galileu/.local/lib/python3.8/site-packages/pythonfuzz/fuzzer.py&quot;, line 24, in worker
     target(buf)
   File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 11, in fuzz2
     intFunc(integer)
   File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 3, in intFunc
     raise Exception(&#39;oh no&#39;)
 Exception: oh no
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5

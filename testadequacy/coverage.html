@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Hands On: Using coverage.py &#8212; The Practical Testing Book</title>
+    <title>Structural Testing &#8212; The Practical Testing Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -28,6 +28,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Hands On: TDD" href="tdd.html" />
@@ -103,7 +104,7 @@
     <a href="idea.html">How Good Are your Tests?</a>
   </li>
   <li class="active">
-    <a href="">Hands On: Using coverage.py</a>
+    <a href="">Structural Testing</a>
   </li>
   <li class="">
     <a href="tdd.html">Hands On: TDD</a>
@@ -263,19 +264,19 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" class="nav-link">In this notebook, we have an example of using code coverage with a unit testing example.</a>
+            <a href="#hands-on-statement-testing-with-coverage-py" class="nav-link">Hands On: Statement testing with coverage.py</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#installing-the-package-coverage-in-this-notebook" class="nav-link">Installing the package coverage in this notebook:</a>
+            <a href="#installing-the-package-coverage-in-this-notebook" class="nav-link">Installing the package coverage in this notebook.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#creating-the-files" class="nav-link">Creating the files</a>
+            <a href="#creating-the-files" class="nav-link">Creating the files.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#coverage-commands" class="nav-link">Coverage commands</a>
+            <a href="#coverage-commands" class="nav-link">Coverage commands.</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -289,11 +290,17 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#running-in-your-computer" class="nav-link">Running in your computer</a>
+            <a href="#running-in-your-computer" class="nav-link">Running in your computer.</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#now-let-s-solve-some-questions-about-code-coverage" class="nav-link">Now, let’s solve some questions about code coverage.</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#now-let-s-solve-some-questions-about-code-coverage" class="nav-link">Now, let’s solve some questions about code coverage.</a>
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#references" class="nav-link">References</a>
+        </li>
+    
+            </ul>
         </li>
     
     </ul>
@@ -307,13 +314,43 @@
         
               <div>
                 
-  <div class="section" id="hands-on-using-coverage-py">
-<h1>Hands On: Using coverage.py<a class="headerlink" href="#hands-on-using-coverage-py" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example">
-<h2>In this notebook, we have an example of using code coverage with a unit testing example.<a class="headerlink" href="#in-this-notebook-we-have-an-example-of-using-code-coverage-with-a-unit-testing-example" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
-</div></blockquote>
+  <div class="section" id="structural-testing">
+<h1>Structural Testing<a class="headerlink" href="#structural-testing" title="Permalink to this headline">¶</a></h1>
+<p>Structural testing, also known as glass box testing or white box testing is an approach where the tests are derived from the knowledge of the software’s structure or internal implementation.</p>
+<ul class="simple">
+<li><p>Statement testing – Statement testing is a white box testing approach in which test scripts are designed to execute code statements.</p></li>
+<li><p>Decision testing/branch testing – Decision testing or branch testing is a white box testing approach.</p></li>
+<li><p>Condition testing – Testing the condition outcomes (TRUE or FALSE). So, getting 100% condition coverage required exercising each condition for both TRUE and FALSE results using test scripts.</p></li>
+<li><p>Multiple condition testing – Testing the different combinations of condition outcomes. Hence for 100% coverage we will have <span class="math notranslate nohighlight">\(2^n\)</span> test scripts. This is very exhaustive and very difficult to achieve 100% coverage.</p></li>
+<li><p>Path testing – Testing the independent paths in the system(paths are executable statements from entry to exit points).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;s_zQCoFYIf0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/s_zQCoFYIf0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="section" id="hands-on-statement-testing-with-coverage-py">
+<h2>Hands On: Statement testing with coverage.py<a class="headerlink" href="#hands-on-statement-testing-with-coverage-py" title="Permalink to this headline">¶</a></h2>
+<p>The term <strong>coverage</strong> in programming is typically used to describe the effectiveness of your tests and how much of your code is actually covered by tests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -340,7 +377,7 @@
 </div>
 </div>
 <div class="section" id="installing-the-package-coverage-in-this-notebook">
-<h2>Installing the package coverage in this notebook:<a class="headerlink" href="#installing-the-package-coverage-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<h2>Installing the package coverage in this notebook.<a class="headerlink" href="#installing-the-package-coverage-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%%capture
@@ -355,7 +392,7 @@ import sys
 <p><code class="docutils literal notranslate"><span class="pre">%%capture</span></code> is used to hide the cell output.</p>
 </div>
 <div class="section" id="creating-the-files">
-<h2>Creating the files<a class="headerlink" href="#creating-the-files" title="Permalink to this headline">¶</a></h2>
+<h2>Creating the files.<a class="headerlink" href="#creating-the-files" title="Permalink to this headline">¶</a></h2>
 <p>Creating a file called area.py:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -374,7 +411,7 @@ import sys
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting area.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing area.py
 </pre></div>
 </div>
 </div>
@@ -397,14 +434,14 @@ import sys
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting tests1.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests1.py
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="coverage-commands">
-<h2>Coverage commands<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
+<h2>Coverage commands.<a class="headerlink" href="#coverage-commands" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!coverage run -m unittest tests1
@@ -469,7 +506,7 @@ TOTAL          13      2    85%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overwriting tests2.py
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Writing tests2.py
 </pre></div>
 </div>
 </div>
@@ -512,7 +549,7 @@ TOTAL          20      0   100%
 </div>
 </div>
 <div class="section" id="running-in-your-computer">
-<h2>Running in your computer<a class="headerlink" href="#running-in-your-computer" title="Permalink to this headline">¶</a></h2>
+<h2>Running in your computer.<a class="headerlink" href="#running-in-your-computer" title="Permalink to this headline">¶</a></h2>
 <p>You need to install coverage.py, the simplest way is with pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span>
 </pre></div>
@@ -539,9 +576,8 @@ TOTAL          20      0   100%
 <p><strong><code class="docutils literal notranslate"><span class="pre">[5</span> <span class="pre">run]</span></code> - are the covered lines.</strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">[2</span> <span class="pre">missing]</span></code> - are the lines not covered.</strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">excluded]</span></code> - are the excluded lines.</strong></p>
-</div>
 <div class="section" id="now-let-s-solve-some-questions-about-code-coverage">
-<h2>Now, let’s solve some questions about code coverage.<a class="headerlink" href="#now-let-s-solve-some-questions-about-code-coverage" title="Permalink to this headline">¶</a></h2>
+<h3>Now, let’s solve some questions about code coverage.<a class="headerlink" href="#now-let-s-solve-some-questions-about-code-coverage" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -572,6 +608,16 @@ TOTAL          20      0   100%
             frameborder="0" marginheight="0" marginwidth="0">
     </iframe>
 </div></div></div>
+</div>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://qa-platforms.com/what-is-structural-testing/">What Is Structural Testing?</a></p></li>
+<li><p><a class="reference external" href="https://www.codemag.com/Article/1701081/Improve-Code-Quality-Using-Test-Coverage">Improve Code Quality Using Test Coverage</a></p></li>
+<li><p><a class="reference external" href="https://coverage.readthedocs.io/en/coverage-5.2/">Coverage.py</a></p></li>
+<li><p><a class="reference external" href="https://www.blog.pythonlibrary.org/2016/07/20/an-intro-to-coverage-py/">An Intro to coverage.py</a></p></li>
+</ul>
 </div>
 </div>
 </div>
