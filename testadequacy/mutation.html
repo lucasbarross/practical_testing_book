@@ -31,7 +31,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hands On: MutPy" href="mutpy.html" />
+    <link rel="next" title="Model-Based Testing" href="../testgeneration/modelbased.html" />
     <link rel="prev" title="Hands On: TDD" href="tdd.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,9 +111,6 @@
   </li>
   <li class="active">
     <a href="">Mutation Testing</a>
-  </li>
-  <li class="">
-    <a href="mutpy.html">Hands On: MutPy</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Generation</p>
@@ -234,9 +231,130 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#" class="nav-link">Mutation Testing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#overview" class="nav-link">Overview</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#mutation-operators" class="nav-link">Mutation Operators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#examples-of-operators-used" class="nav-link">Examples of Operators Used</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#structural-mutation-operators" class="nav-link">Structural mutation operators</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#object-oriented-mutation-operators" class="nav-link">Object-Oriented mutation operators</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#python-related-mutation-operators" class="nav-link">Python-related mutation operators</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#pros-and-cons" class="nav-link">Pros and Cons</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#pros" class="nav-link">Pros</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#cons" class="nav-link">Cons</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#background" class="nav-link">Background</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hands-on-mutpy" class="nav-link">Hands On: MutPy</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#installing" class="nav-link">Installing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#examples" class="nav-link">Examples</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#arithmetic-operators" class="nav-link">Arithmetic operators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#aod-arithmetic-operator-deletion" class="nav-link">AOD - Arithmetic Operator Deletion</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#assignment-operators" class="nav-link">Assignment Operators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#asr-assignment-operator-replacement-and-crp-constant-replacement" class="nav-link">ASR - Assignment Operator Replacement and CRP - Constant Replacement</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#conditional-operators" class="nav-link">Conditional Operators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#cod-conditional-operator-deletion-and-coi-conditional-operator-insertion" class="nav-link">COD - Conditional Operator Deletion and COI - Conditional Operator Insertion</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#relational-operator" class="nav-link">Relational Operator</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#ror-relational-operator-replacement" class="nav-link">ROR - Relational Operator Replacement</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#logical-operator" class="nav-link">Logical Operator</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#lcr-logical-connector-replacement" class="nav-link">LCR - Logical Connector Replacement</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
     
     </ul>
 </nav>
@@ -251,6 +369,447 @@
                 
   <div class="section" id="mutation-testing">
 <h1>Mutation Testing<a class="headerlink" href="#mutation-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Mutation Testing propose the creation of variations of the software under test in order that these tests show that these variations are not correct, therefore by elimination it can be verified that the original program is correct, these checks are made based on execution of existing unit tests. With this in mind, we can consider mutation testing as a technique to help in the process of improving test cases, making them more efficient, as well as to improve or guarantee the quality of these test cases, note that the test technique of mutation testing is a white box test technique.</p>
+<p>Mutation Testing works in the following way, the mutation operators are used on the original code making small changes on those in order to generate some variations called mutants, hence the name given to the technique. After the mutants have been generated, the tests originally used to test the code are performed on the generated mutants, if these mutants fail the test cases they will be considered ‘killed’ mutants, if any mutant does not fail he is considered a ‘survived’ mutant and this is an indication that the tests need to be reviewed/analyzed, making these tests more efficient after these analyzes and corrections.</p>
+<p>Here is an example of a mutation in a given piece of python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">total</span><span class="o">+=</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p>The Assignment Operator Replacement (ASR) would replace <code class="docutils literal notranslate"><span class="pre">+=</span></code> with <code class="docutils literal notranslate"><span class="pre">-=</span></code> and produce the following mutant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">total</span><span class="o">-=</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p>or other change can be the Constant Replacement (CRP) that would replace <code class="docutils literal notranslate"><span class="pre">total</span> <span class="pre">=</span> <span class="pre">0</span></code> with <code class="docutils literal notranslate"><span class="pre">total</span> <span class="pre">=</span> <span class="pre">1</span></code> and produce the following mutant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">total</span><span class="o">+=</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p>When the mutants survive the tests, two situations can be considered, the first is when the test cases are not good enough, as they have not identified the changes in the mutants, and the second is the equivalence between the original program and the mutant called Equivalent Mutant, equivalent mutants are one of the major problems in using mutation tests.</p>
+<p>For example, let’s consider a particular code section of a program <em>pro</em>, and we’re going to indicate a mutant for that program <em>mut</em>. In this case the <em>mut</em> is going to be an equivalent mutant if <em>mut</em> is syntactically different from <em>pro</em> but have the same behavior as <em>pro</em>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">//Program pro</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="cm">/* i value still the same */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">//Equivalent Mutant mut</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">!=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="cm">/* i value still the same */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The example above shows a mutant that was generated by the Relational Operator Replacement (ROR), which changes the operator  <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> for <code class="docutils literal notranslate"><span class="pre">!=</span></code>, if during the execution of the mutant the loop instruction does not change the value of <code class="docutils literal notranslate"><span class="pre">i</span></code>, in this case both, the program pro and your mutant mut, will produce the same output.</p>
+</div>
+<div class="section" id="mutation-operators">
+<h2>Mutation Operators<a class="headerlink" href="#mutation-operators" title="Permalink to this headline">¶</a></h2>
+<p>Mutation operators are changes that are made to the original code in order to generate mutants, these changes can be made by modifying expressions by changing, adding or removing operators and/or statements. These operators can be arithmetic, relational, conditional, logical, assignment, among others.</p>
+<div class="section" id="examples-of-operators-used">
+<h3>Examples of Operators Used<a class="headerlink" href="#examples-of-operators-used" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="structural-mutation-operators">
+<h4>Structural mutation operators<a class="headerlink" href="#structural-mutation-operators" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>AOD - Arithmetic Operator Deletion</p></li>
+<li><p>AOR - Arithmetic Operator Replacement</p></li>
+<li><p>AOI - Arithmetic Operator Insertion</p></li>
+<li><p>COD - Conditional Operator Deletion</p></li>
+<li><p>COR - Conditional Operator Replacement</p></li>
+<li><p>COI - Conditional Operator Insertion</p></li>
+<li><p>ASR - Assignment Operator Replacement</p></li>
+<li><p>LOD - Logical Operator Deletion</p></li>
+<li><p>LOR - Logical Operator Replacement</p></li>
+<li><p>LOI - Logical Operator Insertion</p></li>
+<li><p>BCR - Break Continue Replacement</p></li>
+<li><p>CRP - Constant Replacement</p></li>
+<li><p>LCR - Logical Connector Replacement</p></li>
+<li><p>ROR - Relational Operator Replacement</p></li>
+<li><p>SOR - Shift Operator Replacement</p></li>
+</ul>
+</div>
+<div class="section" id="object-oriented-mutation-operators">
+<h4>Object-Oriented mutation operators<a class="headerlink" href="#object-oriented-mutation-operators" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>EHD - Exception Handler Deletion</p></li>
+<li><p>EXS - Exception Swallowing</p></li>
+<li><p>IHD - Hiding Variable Deletion</p></li>
+<li><p>IOD - Overriding Method Deletion</p></li>
+<li><p>IOP - Overridden Method Calling Position Change</p></li>
+<li><p>SCD - Super Calling Deletion</p></li>
+<li><p>SCI - Super Calling Insertion</p></li>
+</ul>
+</div>
+<div class="section" id="python-related-mutation-operators">
+<h4>Python-related mutation operators<a class="headerlink" href="#python-related-mutation-operators" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>DDL - Decorator Deletion</p></li>
+<li><p>SIR - Slice Index Remove</p></li>
+</ul>
+<p>Some of this operators will be shown on ‘Hands On: MutPy’ section.</p>
+</div>
+</div>
+</div>
+<div class="section" id="pros-and-cons">
+<h2>Pros and Cons<a class="headerlink" href="#pros-and-cons" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pros">
+<h3>Pros<a class="headerlink" href="#pros" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Creation of effective test suites;</p></li>
+<li><p>Verification of the suite’s reliability;</p></li>
+<li><p>Help in refactoring tests;</p></li>
+</ul>
+</div>
+<div class="section" id="cons">
+<h3>Cons<a class="headerlink" href="#cons" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The high computational cost;</p></li>
+<li><p>The amount of human effort involved;</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Good materials on Mutation testing can be found in the literature, some of which were used as the basis for the elaboration of this chapter, such as the survey published by <a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/5487526">Jia and Harman (2011)</a>, <a class="reference external" href="https://courses.cs.ut.ee/MTAT.03.159/2015_spring/uploads/Main/mutopsMethod.pdf">Ma and Offutt (2005)</a> and <a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/6825653">Dereziska and Halas (2014)</a> publications that also talk about mutation operators, among other works such as those by <a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/6613487">Madeyski et al (2014)</a>, <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0164121296001549">Frankl et al (1997)</a>, and <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0065245818300305">Papadakis et al (2019)</a>.</p>
+</div>
+</div>
+<div class="section" id="hands-on-mutpy">
+<h1>Hands On: MutPy<a class="headerlink" href="#hands-on-mutpy" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><a class="reference external" href="https://pypi.org/project/MutPy/">MutPy</a> is a mutation testing tool for Python 3.3+ source code. MutPy supports standard unittest module, generates YAML/HTML reports and has colorful output. It applies mutation on AST level. You could boost your mutation testing process with high order mutations (HOM) and code coverage analysis.</p>
+</div></blockquote>
+<div class="section" id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
+<p>There is two manners to install the MutPy, you can do this using the PyPi command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mutpy</span></code></p>
+<p>Or cloning the MutPy repository to get the latest version available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:mutpy/mutpy.git
+$ cd mutpy/
+$ python3 setup.py install
+</pre></div>
+</div>
+<p>Now we have the MutPy installed let’s practice a little to check some of the mutants operators working. We will follow the example of the calculator, as it is a very practical example and we can show some of these operators in action with simple examples.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>To run the examples we will create a file <code class="docutils literal notranslate"><span class="pre">calculator.py</span></code> that will be our main file, and based on this file the MutPy will made the changes to create the mutants files.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplication</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>Now we have a main file we also need a test file to cover this code, for this we will create the file <code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code> with our unittest the check its quality.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">multiplication</span>
+ 
+<span class="k">class</span> <span class="nc">MultTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_Mult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">multiplication</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since we have the main code and its unittets, let’s run the MutPy command on the same directory were we have this files and let’s check the outputs that will be shown to us.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mut.py</span> <span class="pre">--target</span> <span class="pre">calculator</span> <span class="pre">--unit-test</span> <span class="pre">test_calculator</span> <span class="pre">-m</span></code></p>
+<p>Note that the command have some parameters, where –target is our main file (calculator.py) and –unit-test is our test (test_calculator.py)<a class="footnote-reference brackets" href="#id2" id="id1">2</a>. After run the command above it will produce the following output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutation</span> <span class="n">process</span><span class="p">:</span>
+   <span class="o">-</span> <span class="n">targets</span><span class="p">:</span> <span class="n">calculator</span>
+   <span class="o">-</span> <span class="n">tests</span><span class="p">:</span> <span class="n">test_calculator</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="mi">1</span> <span class="n">tests</span> <span class="n">passed</span><span class="p">:</span>
+   <span class="o">-</span> <span class="n">test_calculator</span> <span class="p">[</span><span class="mf">0.00000</span> <span class="n">s</span><span class="p">]</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   1] AOR calculator:</span>
+<span class="o">---------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00100</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_Mult</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">MultTest</span><span class="p">)</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   2] AOR calculator:</span>
+<span class="o">---------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">//</span> <span class="n">y</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00100</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_Mult</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">MultTest</span><span class="p">)</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   3] AOR calculator:</span>
+<span class="o">---------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">y</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00050</span> <span class="n">s</span><span class="p">]</span> <span class="n">survived</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.03450</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">66.7</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">3</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mf">66.7</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">1</span> <span class="p">(</span><span class="mf">33.3</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">incompetent</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">timeout</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example above, 3 mutants were generated, but only 2 were killed and the last one survived, giving to us the score ratio of 66.7% of reliability. One of the generated mutants survived because the result of the assert <code class="docutils literal notranslate"><span class="pre">2*2</span> <span class="pre">==</span> <span class="pre">4</span></code> is exactly the same result of the mutation <code class="docutils literal notranslate"><span class="pre">2**2</span> <span class="pre">==</span> <span class="pre">4</span></code>, so in this case the the test is not good enough to test the multiplication operation, which indicates that we need to change the entries for this test to improve our coverage.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">multiplication</span>
+ 
+<span class="k">class</span> <span class="nc">MultTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_Mult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">multiplication</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the changes above and ran the MutPy again we can notice the the same 3 mutants were generated, but on this execution all mutants were killed properly, giving to us the score ratio of 100% of reliability.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.02900</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">3</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">3</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">incompetent</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">timeout</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you observe on examples above, only one of the mutation operators was used on the 3 mutants, the operator AOR (Arithmetic Operator Replacement). Let’s now check other examples that uses others operators.</p>
+<div class="section" id="arithmetic-operators">
+<h3>Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="aod-arithmetic-operator-deletion">
+<h4>AOD - Arithmetic Operator Deletion<a class="headerlink" href="#aod-arithmetic-operator-deletion" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inversion</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InvTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_Inv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inversion</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mut.py</span></code> output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   1] AOD calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">inversion</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="n">x</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00150</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_Inv</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">InvTest</span><span class="p">)</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.02200</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="assignment-operators">
+<h3>Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="asr-assignment-operator-replacement-and-crp-constant-replacement">
+<h4>ASR - Assignment Operator Replacement and CRP - Constant Replacement<a class="headerlink" href="#asr-assignment-operator-replacement-and-crp-constant-replacement" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">total</span><span class="o">+=</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SummaTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_Summa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">summation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mut.py</span></code> output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   1] ASR calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+  <span class="mi">3</span><span class="p">:</span>     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="mi">4</span><span class="p">:</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+<span class="o">-</span> <span class="mi">5</span><span class="p">:</span>         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="o">+</span> <span class="mi">5</span><span class="p">:</span>         <span class="n">total</span> <span class="o">-=</span> <span class="n">i</span>
+  <span class="mi">6</span><span class="p">:</span>     <span class="k">return</span> <span class="n">total</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00050</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_Summa</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">SummaTest</span><span class="p">)</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   2] CRP calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="mi">4</span><span class="p">:</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+  <span class="mi">5</span><span class="p">:</span>         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+  <span class="mi">6</span><span class="p">:</span>     <span class="k">return</span> <span class="n">total</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00100</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_Summa</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">SummaTest</span><span class="p">)</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.03350</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="conditional-operators">
+<h3>Conditional Operators<a class="headerlink" href="#conditional-operators" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cod-conditional-operator-deletion-and-coi-conditional-operator-insertion">
+<h4>COD - Conditional Operator Deletion and COI - Conditional Operator Insertion<a class="headerlink" href="#cod-conditional-operator-deletion-and-coi-conditional-operator-insertion" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+<span class="k">def</span> <span class="nf">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Number</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IsNumTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_IsNum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">isNum</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mut.py</span></code> output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   1] COD calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+  <span class="mi">2</span><span class="p">:</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">)):</span>
+<span class="o">+</span> <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+  <span class="mi">5</span><span class="p">:</span>         <span class="k">return</span> <span class="kc">False</span>
+  <span class="mi">6</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">True</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00200</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_IsNum</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">IsNumTest</span><span class="p">)</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   2] COI calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+  <span class="mi">2</span><span class="p">:</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">)):</span>
+<span class="o">+</span> <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">)))):</span>
+  <span class="mi">5</span><span class="p">:</span>         <span class="k">return</span> <span class="kc">False</span>
+  <span class="mi">6</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">True</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00100</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_IsNum</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">IsNumTest</span><span class="p">)</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.03200</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="relational-operator">
+<h3>Relational Operator<a class="headerlink" href="#relational-operator" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ror-relational-operator-replacement">
+<h4>ROR - Relational Operator Replacement<a class="headerlink" href="#ror-relational-operator-replacement" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">areEquals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AreEqual</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_areEquals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">areEquals</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">areEquals</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mut.py</span></code> output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   2] ROR calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">areEquals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<span class="o">+</span> <span class="mi">3</span><span class="p">:</span>     <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">:</span>
+  <span class="mi">4</span><span class="p">:</span>         <span class="k">return</span> <span class="kc">True</span>
+  <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00150</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_areEquals</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">AreEqual</span><span class="p">)</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.02950</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="logical-operator">
+<h3>Logical Operator<a class="headerlink" href="#logical-operator" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="lcr-logical-connector-replacement">
+<h4>LCR - Logical Connector Replacement<a class="headerlink" href="#lcr-logical-connector-replacement" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="k">def</span> <span class="nf">areNum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="n">isNum</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">test_calculator.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AreNumTest</span> <span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_AreNum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">areNum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">areNum</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mut.py</span></code> output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Start</span> <span class="n">mutants</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">execution</span><span class="p">:</span>
+<span class="o">...</span>
+   <span class="o">-</span> <span class="p">[</span><span class="c1">#   4] LCR calculator:</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+   <span class="mi">5</span><span class="p">:</span>         <span class="k">return</span> <span class="kc">False</span>
+   <span class="mi">6</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">True</span>
+   <span class="mi">7</span><span class="p">:</span>
+   <span class="mi">8</span><span class="p">:</span> <span class="k">def</span> <span class="nf">areNum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">-</span>  <span class="mi">9</span><span class="p">:</span>     <span class="k">if</span> <span class="p">(</span><span class="n">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="n">isNum</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+<span class="o">+</span>  <span class="mi">9</span><span class="p">:</span>     <span class="k">if</span> <span class="p">(</span><span class="n">isNum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">or</span> <span class="n">isNum</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+  <span class="mi">10</span><span class="p">:</span>         <span class="k">return</span> <span class="kc">True</span>
+  <span class="mi">11</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mf">0.00100</span> <span class="n">s</span><span class="p">]</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">test_AreNum</span> <span class="p">(</span><span class="n">test_calculator</span><span class="o">.</span><span class="n">AreNumTest</span><span class="p">)</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Mutation</span> <span class="n">score</span> <span class="p">[</span><span class="mf">0.08651</span> <span class="n">s</span><span class="p">]:</span> <span class="mf">100.0</span><span class="o">%</span>
+   <span class="o">-</span> <span class="nb">all</span><span class="p">:</span> <span class="mi">4</span>
+   <span class="o">-</span> <span class="n">killed</span><span class="p">:</span> <span class="mi">4</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">%</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">survived</span><span class="p">:</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.0</span><span class="o">%</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>As a suggestion, it is good to practice these examples above on your machine and preferably changing your test files to check how much your coverage is being improved or not with these changes.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>A List of all arguments with which you can run MutPy can be found on their <a class="reference external" href="https://pypi.org/project/MutPy/">page</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -263,7 +822,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="tdd.html" title="previous page">Hands On: TDD</a>
-    <a class='right-next' id="next-link" href="mutpy.html" title="next page">Hands On: MutPy</a>
+    <a class='right-next' id="next-link" href="../testgeneration/modelbased.html" title="next page">Model-Based Testing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

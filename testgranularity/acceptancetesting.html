@@ -112,9 +112,6 @@
   <li class="">
     <a href="../testadequacy/mutation.html">Mutation Testing</a>
   </li>
-  <li class="">
-    <a href="../testadequacy/mutpy.html">Hands On: MutPy</a>
-  </li>
 <li class="navbar-special">
 <p class="margin-caption">Test Generation</p>
 </li>
@@ -242,6 +239,42 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#what-is-acceptance-testing" class="nav-link">What is Acceptance Testing?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#benefits-to-acceptance-tests" class="nav-link">Benefits to Acceptance Tests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#types-of-acceptance-testing" class="nav-link">Types of Acceptance Testing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#alpha-beta-testing" class="nav-link">1. Alpha & Beta Testing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#contract-acceptance-testing" class="nav-link">2.Contract Acceptance Testing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#regulation-acceptance-testing" class="nav-link">3.Regulation Acceptance Testing</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#operational-acceptance-testing" class="nav-link">4.Operational Acceptance Testing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#black-box-testing" class="nav-link">5.Black Box Testing</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#hands-on" class="nav-link">Hands On</a>
         </li>
     
@@ -258,6 +291,53 @@
                 
   <div class="section" id="acceptance-testing">
 <h1>Acceptance Testing<a class="headerlink" href="#acceptance-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-acceptance-testing">
+<h2>What is Acceptance Testing?<a class="headerlink" href="#what-is-acceptance-testing" title="Permalink to this headline">¶</a></h2>
+<p>The final level of the tests’ granularity is Acceptance Testing. Acceptance Testing has the purpose of evaluating the application and determine whether the software system has met the requirements specifications. It means that the test determines if the system is ready for release or not.</p>
+<p>During this phase of testing, the user will test the system to find out whether the application meets their business needs. The results can give the customer the security that the application has the required features and behaves as expected. Resuming, acceptance tests represent the customer’s interests.</p>
+</div>
+<div class="section" id="benefits-to-acceptance-tests">
+<h2>Benefits to Acceptance Tests<a class="headerlink" href="#benefits-to-acceptance-tests" title="Permalink to this headline">¶</a></h2>
+<p>The preservation of those tests by running frequently and maintaining them update can deliver good results for a software development team, as:
+Validates that business requirements are met as defined in user stories
+Encourages closer collaboration between developers and client/stakeholders
+Reduces the risk of finding defects post-production and regression bugs
+Identify problems which unit or integration tests might have missed</p>
+<p>There is a difference between acceptance tests and functional testing. The acceptance tests verify if the specific requirements are working for the user, it means, the costumer and the stakeholders have to agree on the product. On the other hand, the functional testing validates the specific requirements and specifications of the software, but does not mean that it actually work for the user.</p>
+</div>
+<div class="section" id="types-of-acceptance-testing">
+<h2>Types of Acceptance Testing<a class="headerlink" href="#types-of-acceptance-testing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Following are the types of acceptance testing:</p></li>
+<li><p>Alpha &amp; Beta Testing</p></li>
+<li><p>Contract Acceptance Testing</p></li>
+<li><p>Regulation Acceptance Testing</p></li>
+<li><p>Operational Acceptance Testing</p></li>
+<li><p>Black Box Testing</p></li>
+</ul>
+<div class="section" id="alpha-beta-testing">
+<h3>1. Alpha &amp; Beta Testing<a class="headerlink" href="#alpha-beta-testing" title="Permalink to this headline">¶</a></h3>
+<p>Alpha testing is performed by internal employees in the development environment. The tests are done long before the product release, so the developers’ team can fix issues and improve the usability of the product. Also, alpha tests can be conducted by a potential user group as well.</p>
+<p>Beta testing is performed by a large group of customers who use the system in their environment. Each one of the customers has the liberty to explore the product by your criteria, feeling comfortable to accept or not the system in its actual state. This type of testing is more subjective because there is little or no management by the development organization. These beta testers then provide feedback, which in turn leads to improvements in the product.</p>
+<p>Alpha and Beta Testing are done before the software is released to all customers.</p>
+</div>
+<div class="section" id="contract-acceptance-testing">
+<h3>2.Contract Acceptance Testing<a class="headerlink" href="#contract-acceptance-testing" title="Permalink to this headline">¶</a></h3>
+<p>In contract acceptance testing, the software test has to meet the specifications and criteria defined and agreed previously in the contract. When the project team agrees to the contract, only the acceptance criteria and specifications are defined.</p>
+<div class="section" id="regulation-acceptance-testing">
+<h4>3.Regulation Acceptance Testing<a class="headerlink" href="#regulation-acceptance-testing" title="Permalink to this headline">¶</a></h4>
+<p>The regulation acceptance testing tests the developed software against certain rules and regulations. These are mainly governmental rules and regulations and compliance with these legal issues is absolutely necessary. It is also called compliance acceptance testing.</p>
+</div>
+</div>
+<div class="section" id="operational-acceptance-testing">
+<h3>4.Operational Acceptance Testing<a class="headerlink" href="#operational-acceptance-testing" title="Permalink to this headline">¶</a></h3>
+<p>The purpose of this test case is to ensure that there are workflows in place to allow the software or system to be used. The tests should validate workflows for backup plans, user training, and various maintenance processes and security checks. It is also called operational readiness testing or production acceptance testing.</p>
+</div>
+<div class="section" id="black-box-testing">
+<h3>5.Black Box Testing<a class="headerlink" href="#black-box-testing" title="Permalink to this headline">¶</a></h3>
+<p>Black box testing is often categorized as functional testing, but can, to some extent, be seen as a type of User Acceptance Testing. Both testing techniques have the same principle because the tester isn’t aware of any internal code structure, but only about the requirements which the software should meet. The tester conducting black box tests should only know about what the software is supposed to do.</p>
+</div>
+</div>
 <div class="section" id="hands-on">
 <h2>Hands On<a class="headerlink" href="#hands-on" title="Permalink to this headline">¶</a></h2>
 <p>— use some bdd library —</p>
