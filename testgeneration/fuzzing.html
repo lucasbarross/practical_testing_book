@@ -628,13 +628,16 @@ Now, what about using it to test our own programs? Well, we can apply the same p
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#0 READ units: 0
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 19 rss: 112.2421875 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#1 NEW     cov: 0 corp: 1 exec/s: 25 rss: 112.05078125 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 173 rss: 112.28515625 MB
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#2 NEW     cov: 29 corp: 2 exec/s: 150 rss: 112.0859375 MB
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#6808 PULSE     cov: 55 corp: 3 exec/s: 1361 rss: 112.0859375 MB
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>#13549 PULSE     cov: 55 corp: 3 exec/s: 1347 rss: 112.0859375 MB
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>oh no
@@ -646,6 +649,9 @@ Traceback (most recent call last):
   File &quot;&lt;ipython-input-6-1259eb7f2e89&gt;&quot;, line 3, in intFunc
     raise Exception(&#39;oh no&#39;)
 Exception: oh no
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash was written to crash-6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5
 </pre></div>
 </div>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>crash = 4a
